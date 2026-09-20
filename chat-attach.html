@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Чат — вложения — WeDo Market</title>
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/chats.css">
+</head>
+<body class="no-mnav chat-page chat-page--attach">
+<div class="page">
+<header class="header d-only">
+  <div class="container header__inner">
+    <div class="header__left">
+      <a class="header__logo" href="index.html" aria-label="WeDo Market — на главную">
+        <img src="assets/img/logo.png" alt="WeDo Market" width="65" height="64">
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a class="nav__link" href="task-create-step1.html">Создать заказ</a>
+        <a class="nav__link" href="#">Найти задание</a>
+        <a class="nav__link" href="#">Исполнители</a>
+      </nav>
+    </div>
+    <div class="header__right">
+      <div class="header__icons">
+        <a class="icon-btn icon-btn--bell" href="#" aria-label="Уведомления"><img src="assets/icons/bell.svg" alt="" width="17" height="19"></a>
+        <a class="icon-btn" href="#" aria-label="Чаты"><img src="assets/icons/chat.svg" alt="" width="32" height="32"></a>
+      </div>
+      <div class="user">
+        <button class="user__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Меню пользователя">
+          <img class="user__avatar" src="assets/icons/avatar.svg" alt="" width="40" height="40">
+          <img class="user__chevron" src="assets/icons/chevron-down-sm.svg" alt="" width="16" height="16">
+        </button>
+        <div class="user__menu" role="menu">
+          <a href="index.html" role="menuitem">Дашборд</a>
+          <a href="#" role="menuitem">Профиль</a>
+          <a href="#" role="menuitem">Настройки</a>
+          <a href="#" role="menuitem">Выйти</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<header class="m-header m-only-flex">
+  <a class="m-header__logo" href="index.html" aria-label="WeDo Market — на главную"><img src="assets/img/logo-wordmark.svg" alt="WeDo Market" width="65" height="19"></a>
+  <a class="m-header__bell" href="notification-settings.html" aria-label="Уведомления"><svg class="icon icon--m-bell" aria-hidden="true" focusable="false" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.1797 24.3335C11.4143 24.8402 11.7517 25.261 12.1581 25.5535C12.5644 25.8462 13.0253 26.0002 13.4945 26.0002C13.9637 26.0002 14.4246 25.8462 14.8309 25.5535C15.2373 25.261 15.5747 24.8402 15.8093 24.3335" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.36288 17.2874C1.18144 17.4624 1.0617 17.68 1.01823 17.9138C0.974758 18.1476 1.00943 18.3874 1.11802 18.6042C1.22662 18.8209 1.40446 19.0053 1.62991 19.1347C1.85536 19.2642 2.1187 19.3332 2.3879 19.3334H24.6106C24.8798 19.3335 25.1433 19.2647 25.3687 19.1355C25.5943 19.0063 25.7725 18.8222 25.8814 18.6056C25.9902 18.3889 26.0252 18.1491 25.9821 17.9153C25.9389 17.6815 25.8196 17.4638 25.6385 17.2886C23.7912 15.6129 21.8329 13.8321 21.8329 8.33335C21.8329 6.38842 20.9548 4.52315 19.392 3.14788C17.8291 1.77262 15.7094 1 13.4993 1C11.2891 1 9.16942 1.77262 7.60658 3.14788C6.04374 4.52315 5.16574 6.38842 5.16574 8.33335C5.16574 13.8321 3.20599 15.6129 1.36288 17.2874Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span class="m-header__dot" aria-hidden="true"></span></a>
+</header>
+<main class="page__main">
+  <div class="container">
+<div class="chat chat--attach">
+  <header class="chat__bar">
+  <a class="chat__back" href="chats.html" aria-label="Назад к чатам"><svg class="icon icon--chat-back" aria-hidden="true" focusable="false" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 9H1M8.74194 17L1 9L8.74194 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
+  <img class="chat__avatar" src="assets/img/chat-avatar.png" alt="" width="40" height="40">
+  <div class="chat__who">
+    <p class="chat__name">Max Max <img class="chat__emoji" src="assets/img/chat-status-emoji.png" alt="" width="20" height="20"></p>
+    <p class="chat__status">онлайн</p>
+  </div>
+  <button class="chat__more" type="button" aria-label="Меню чата" aria-haspopup="true"><svg class="icon icon--chat-more" aria-hidden="true" focusable="false" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icons">
+<path id="Shape" d="M14 19C15.1046 19 16 19.8954 16 21C16 22.1046 15.1046 23 14 23C12.8954 23 12 22.1046 12 21C12 19.8954 12.8954 19 14 19ZM14 12C15.1046 12 16 12.8954 16 14C16 15.1046 15.1046 16 14 16C12.8954 16 12 15.1046 12 14C12 12.8954 12.8954 12 14 12ZM14 5C15.1046 5 16 5.89543 16 7C16 8.10457 15.1046 9 14 9C12.8954 9 12 8.10457 12 7C12 5.89543 12.8954 5 14 5Z" fill="currentColor"/>
+</g>
+</svg></button>
+</header>
+  <div class="chat__thread" id="chat-thread" aria-live="polite">
+  <p class="chat__date">28 февраля</p>
+  <div class="msg msg--in"><p class="msg__text msg__text--sm">Привет! Готов выполнить. Подскажите, коротко: целевая аудитория, бюджет и ожидания по KPI?</p></div>
+  <div class="msg msg--out"><p class="msg__text">ЦА — 18–35 лет, в городах, интересы: гаджеты и лайфстайл. Бюджет на маркетинг 2 000 000 ₽ за первые 3 месяца. Ждём рост узнаваемости и минимум 3000 лидов за квартал.</p></div>
+  <div class="msg msg--in"><p class="msg__text">Понял. Предлагаю план на 12 недель: 1) исследование и УТП — 2 недели; 2) контент и креативы — 4 недели; 3) тесты рекламы и лендинг — 2 недели; 4) предзапуск и сбор лидов — 2 недели; 5) запуск и оптимизация — 2 недели. Подходит?</p></div>
+  <div class="msg msg--out"><p class="msg__text">Подходит. Нужно, чтобы у каждой стадии были ответственные и конкретные дедлайны. Кто будет в команде?</p></div>
+  <div class="msg msg--voice msg--out">
+  <div class="voice">
+    <button class="voice__play" type="button" aria-label="Воспроизвести голосовое сообщение"><img src="assets/img/chat-play.svg" alt="" width="48" height="48"></button>
+    <div class="voice__body">
+      <span class="voice__wave" aria-hidden="true"><i style="height:13px"></i><i style="height:20px"></i><i style="height:13px"></i><i style="height:20px"></i><i style="height:13px"></i><i style="height:9px"></i><i style="height:16px"></i><i style="height:18px"></i><i style="height:8px"></i><i style="height:13px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:17px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:13px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:18px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:17px"></i><i class="is-rest" style="height:17px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:18px"></i><i class="is-rest" style="height:18px"></i><i class="is-rest" style="height:20px"></i><i class="is-rest" style="height:20px"></i><i class="is-rest" style="height:7px"></i><i class="is-rest" style="height:7px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:18px"></i><i class="is-rest" style="height:18px"></i></span>
+      <span class="voice__dur">0:25<i class="voice__unread" aria-hidden="true"></i></span>
+    </div>
+  </div>
+  <time class="msg__time">10:25</time>
+</div>
+  <div class="msg msg--voice msg--in">
+  <div class="voice">
+    <button class="voice__play" type="button" aria-label="Воспроизвести голосовое сообщение"><img src="assets/img/chat-play.svg" alt="" width="48" height="48"></button>
+    <div class="voice__body">
+      <span class="voice__wave" aria-hidden="true"><i style="height:13px"></i><i style="height:20px"></i><i style="height:13px"></i><i style="height:20px"></i><i style="height:13px"></i><i style="height:9px"></i><i style="height:16px"></i><i style="height:18px"></i><i style="height:8px"></i><i style="height:13px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:17px"></i><i style="height:12px"></i><i style="height:16px"></i><i style="height:13px"></i><i style="height:18px"></i><i style="height:17px"></i><i style="height:18px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:17px"></i><i class="is-rest" style="height:17px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:13px"></i><i class="is-rest" style="height:18px"></i><i class="is-rest" style="height:18px"></i><i class="is-rest" style="height:20px"></i><i class="is-rest" style="height:20px"></i><i class="is-rest" style="height:7px"></i><i class="is-rest" style="height:7px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:12px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:8px"></i><i class="is-rest" style="height:18px"></i><i class="is-rest" style="height:18px"></i></span>
+      <span class="voice__dur">0:25<i class="voice__unread" aria-hidden="true"></i></span>
+    </div>
+  </div>
+  <time class="msg__time">10:25</time>
+</div>
+  <div class="msg msg--file msg--out">
+  <div class="file-row">
+  <span class="doc-preview doc-preview--zip" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-zip.svg" alt="">
+  <span class="doc-preview__ext">zip</span>
+</span>
+  <div class="file-row__info">
+    <p class="file-row__name">Last_School_Essay.zip</p>
+    <p class="file-row__size">1 MB</p>
+  </div>
+  <button class="file-row__more" type="button" aria-label="Действия с файлом"><svg class="icon icon--chat-dots" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Dots">
+<path id="Shape" d="M11.9996 16.2857C12.9462 16.2857 13.7142 17.053 13.7144 17.9996C13.7144 18.9464 12.9464 19.7144 11.9996 19.7144C11.053 19.7142 10.2857 18.9462 10.2857 17.9996C10.2859 17.0531 11.0531 16.2859 11.9996 16.2857ZM11.9996 10.2857C12.9462 10.2857 13.7142 11.053 13.7144 11.9996C13.7144 12.9464 12.9464 13.7144 11.9996 13.7144C11.053 13.7142 10.2857 12.9462 10.2857 11.9996C10.2859 11.0531 11.0531 10.2859 11.9996 10.2857ZM11.9996 4.28572C12.9462 4.28572 13.7142 5.053 13.7144 5.99958C13.7144 6.94636 12.9464 7.71443 11.9996 7.71443C11.053 7.7142 10.2857 6.94622 10.2857 5.99958C10.2859 5.05314 11.0531 4.28594 11.9996 4.28572Z" fill="currentColor"/>
+</g>
+</svg></button>
+</div>
+  <time class="msg__time">00:25</time>
+</div>
+  <div class="msg msg--reply msg--out">
+  <div class="msg__quote">
+    <span class="msg__quote-line" aria-hidden="true"></span>
+    <span class="doc-preview doc-preview--zip doc-preview--sm" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-zip.svg" alt="">
+  <span class="doc-preview__ext">zip</span>
+</span>
+    <span class="msg__quote-body">
+      <span class="msg__quote-name">Last_School_Essay.zip</span>
+      <span class="msg__quote-type">file</span>
+    </span>
+  </div>
+  <p class="msg__text">Ознакомьтесь с файлами проекта, тут указаны все требования</p>
+  <time class="msg__time">00:25</time>
+</div>
+  <div class="msg msg--image msg--out">
+  <a class="msg__image" href="assets/img/chat-photo-attach.jpg"><img src="assets/img/chat-photo-attach.jpg" alt="Скриншот: папки Bevels, Materials, Models" width="251" height="255"></a>
+  <p class="msg__text">Тут найдете ТЗ и описание! </p>
+  <time class="msg__time">00:25</time>
+</div>
+</div>
+  <form class="chat__input chat__input--mic" id="chat-form" action="#" autocomplete="off">
+  <button class="chat__round-btn chat__emoji-btn" type="button" aria-label="Эмодзи"><svg class="icon icon--chat-emoji" aria-hidden="true" focusable="false" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.3595 0.000129256C16.402 0.000129045 17.0051 -0.000896964 17.5226 0.0636058C21.2365 0.526846 24.1622 3.45218 24.6251 7.16614C24.6896 7.68358 24.6876 8.28681 24.6876 9.32923C24.6876 11.1352 24.6896 12.1199 24.5851 12.9581C23.8271 19.0378 19.0378 23.8271 12.9581 24.5851C12.1199 24.6896 11.1352 24.6876 9.32923 24.6876C8.28681 24.6876 7.68358 24.6896 7.16614 24.6251C3.45218 24.1622 0.526846 21.2365 0.0636058 17.5226C-0.000896964 17.0051 0.000129045 16.402 0.000129256 15.3595V12.3439C0.000129187 10.4145 -0.000614902 8.91643 0.0929027 7.71497C0.187201 6.50388 0.382174 5.51992 0.810676 4.63001C1.61443 2.96101 2.96101 1.61443 4.63001 0.810676C5.51992 0.382174 6.50388 0.187201 7.71497 0.0929027C8.91643 -0.000614908 10.4145 0.000129186 12.3439 0.000129256H15.3595ZM12.3439 1.77161C10.3869 1.77161 8.96941 1.77162 7.85267 1.85853C6.74545 1.94474 6.00704 2.11193 5.39759 2.4054C4.09018 3.03507 3.03507 4.09018 2.4054 5.39759C2.11193 6.00704 1.94474 6.74545 1.85853 7.85267C1.77162 8.96941 1.77161 10.3869 1.77161 12.3439V15.3595C1.77161 16.4549 1.77301 16.9221 1.82044 17.3029C2.18329 20.2125 4.47526 22.5055 7.38489 22.8683C7.76576 22.9157 8.23358 22.9171 9.32923 22.9171C11.1886 22.9171 12.0377 22.9157 12.7394 22.8283C13.1893 22.7722 13.6305 22.6877 14.0626 22.5822C14.0627 21.2229 14.0654 20.1426 14.1368 19.2677C14.1688 18.8769 14.2162 18.5132 14.2863 18.1701C13.6628 18.3292 12.9879 18.4327 12.3439 18.4327C10.5204 18.4327 9.15579 17.6693 8.26478 16.9269C7.81994 16.5562 7.48603 16.1856 7.26185 15.9054C7.14947 15.7649 7.06383 15.6449 7.00404 15.5577C6.97432 15.5144 6.95068 15.4788 6.93372 15.4523C6.9253 15.4391 6.91752 15.4276 6.91224 15.4191C6.90981 15.4151 6.90809 15.4112 6.90638 15.4083C6.90553 15.4069 6.90418 15.4055 6.90345 15.4044L6.90247 15.4025V15.4015C6.90767 15.398 6.9685 15.3611 7.65638 14.9484L6.9015 15.4015C6.65144 14.9847 6.78663 14.4437 7.20325 14.1935C7.61967 13.9436 8.15983 14.0784 8.41029 14.4943C8.41149 14.4962 8.41366 14.4992 8.41614 14.5031C8.42359 14.5147 8.43646 14.5353 8.45521 14.5626C8.49307 14.6178 8.55411 14.7024 8.63685 14.8058C8.8033 15.0138 9.05574 15.2944 9.39173 15.5743C10.0632 16.1339 11.0427 16.672 12.3439 16.672C12.9013 16.672 13.537 16.5646 14.1261 16.3898C14.6473 16.235 15.0814 16.0414 15.3673 15.8654C15.9102 15.1758 16.5996 14.6079 17.3898 14.2052C18.0924 13.8473 18.8661 13.6908 19.7892 13.6154C20.575 13.5512 21.5261 13.5452 22.6964 13.5441C22.7485 13.2789 22.7944 13.0109 22.8283 12.7394C22.9157 12.0377 22.9171 11.1886 22.9171 9.32923C22.9171 8.23358 22.9157 7.76576 22.8683 7.38489C22.5055 4.47526 20.2125 2.18329 17.3029 1.82044C16.9221 1.77301 16.4549 1.77161 15.3595 1.77161H12.3439ZM22.1993 15.3175C21.2691 15.321 20.5392 15.3305 19.9327 15.38C19.1196 15.4465 18.6058 15.5739 18.1945 15.7833C17.3812 16.1977 16.7193 16.8598 16.3048 17.673C16.0953 18.0843 15.968 18.5981 15.9015 19.4113C15.8465 20.0846 15.8389 20.9103 15.837 21.9933C18.7778 20.746 21.0903 18.3293 22.1993 15.3175ZM8.43763 8.17689C9.15675 8.17689 9.73938 8.99336 9.73939 10.0001C9.73939 11.0069 9.15675 11.8234 8.43763 11.8234C7.71851 11.8234 7.13587 11.0069 7.13587 10.0001C7.13587 8.99337 7.71851 8.17689 8.43763 8.17689ZM15.7296 8.17689C16.4486 8.17713 17.0314 8.99351 17.0314 10.0001C17.0314 11.0067 16.4486 11.8231 15.7296 11.8234C15.0105 11.8234 14.4269 11.0069 14.4269 10.0001C14.4269 8.99336 15.0105 8.17689 15.7296 8.17689Z" fill="currentColor"/>
+</svg></button>
+  <label class="chat__field">
+    <span class="visually-hidden">Сообщение</span>
+    <input class="chat__msg" type="text" name="message" placeholder="Сообщение" id="chat-msg">
+  </label>
+  <button class="chat__round-btn chat__attach" type="button" id="chat-attach-btn" aria-label="Прикрепить файл" aria-expanded="true" aria-controls="chat-picker"><svg class="icon icon--chat-paperclip" aria-hidden="true" focusable="false" viewBox="0 0 29.1667 29.1667" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon">
+<path id="Vector 7" d="M6.14583 11.3542L10.5729 6.92708C13.5932 3.90678 18.4901 3.90678 21.5104 6.92708C24.5307 9.94739 24.5307 14.8443 21.5104 17.8646L15.2604 24.1146C13.1031 26.2719 9.60528 26.2719 7.44792 24.1146C5.29055 21.9572 5.29055 18.4594 7.44792 16.3021L14.2188 9.53125C15.5132 8.23683 17.6118 8.23683 18.9062 9.53125C20.2007 10.8257 20.2007 12.9243 18.9063 14.2187L11.875 21.25" stroke="currentColor" stroke-width="1.77083" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg></button>
+  <button class="chat__round-btn chat__mic" type="button" aria-label="Записать голосовое сообщение"><svg class="icon icon--chat-mic" aria-hidden="true" focusable="false" viewBox="0 0 29.1667 29.1667" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon">
+<rect id="Rectangle 22" x="10.4167" y="3.125" width="8.33333" height="15.625" rx="4.16667" stroke="currentColor" stroke-width="1.77083"/>
+<path id="Vector 31" d="M22.9167 14.5833C22.9167 19.7917 18.75 22.3958 14.5833 22.3958M6.25 14.5833C6.25 19.7917 10.4167 22.3958 14.5833 22.3958M14.5833 22.3958V27.0833" stroke="currentColor" stroke-width="1.77083" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg></button>
+</form>
+</div>
+<div class="chat-overlay" id="chat-overlay" hidden></div>
+<section class="picker" id="chat-picker" aria-label="Прикрепить вложение" hidden>
+  <span class="picker__handle" aria-hidden="true"></span>
+  <div class="picker__panes">
+    <div class="picker__pane is-active" id="picker-pane-photo" role="tabpanel" aria-labelledby="picker-tab-photo"><ul class="picker__grid"><li class="picker__tile picker__tile--camera">
+      <button type="button" aria-label="Снять фото">
+        <img class="picker__img" src="assets/img/chat-photo-1.jpg" alt="">
+        <img class="picker__camera" src="assets/img/chat-camera.svg" alt="" width="36" height="36">
+      </button>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="2">
+        <img class="picker__img" src="assets/img/chat-photo-2.jpg" alt="Фото 2">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="3">
+        <img class="picker__img" src="assets/img/chat-photo-3.jpg" alt="Фото 3">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="4">
+        <img class="picker__img" src="assets/img/chat-photo-4.jpg" alt="Фото 4">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="5">
+        <img class="picker__img" src="assets/img/chat-photo-5.jpg" alt="Фото 5">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="6">
+        <img class="picker__img" src="assets/img/chat-photo-6.jpg" alt="Фото 6">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="7">
+        <img class="picker__img" src="assets/img/chat-photo-7.jpg" alt="Фото 7">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="8">
+        <img class="picker__img" src="assets/img/chat-photo-8.jpg" alt="Фото 8">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="9">
+        <img class="picker__img" src="assets/img/chat-photo-9.jpg" alt="Фото 9">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="10">
+        <img class="picker__img" src="assets/img/chat-photo-10.jpg" alt="Фото 10">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="11">
+        <img class="picker__img" src="assets/img/chat-photo-11.jpg" alt="Фото 11">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-photo" value="12">
+        <img class="picker__img" src="assets/img/chat-photo-12.jpg" alt="Фото 12">
+        <span class="picker__check" aria-hidden="true"></span>
+        
+      </label>
+    </li></ul></div>
+    <div class="picker__pane" id="picker-pane-files" role="tabpanel" aria-labelledby="picker-tab-files" hidden><ul class="picker__files"><li class="picker__file-group">
+      <div class="file-row">
+  <span class="doc-preview doc-preview--pdf" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-pdf.svg" alt="">
+  <span class="doc-preview__ext">pdf</span>
+</span>
+  <div class="file-row__info">
+    <p class="file-row__name">Last_School_Essay.pdf</p>
+    <p class="file-row__size">1 MB</p>
+  </div>
+  <label class="file-row__pick">
+      <input type="radio" name="attach-file" value="Last_School_Essay.pdf" checked>
+      <span class="file-row__radio" aria-hidden="true"></span>
+      <span class="visually-hidden">Выбрать Last_School_Essay.pdf</span>
+    </label>
+</div>
+      <div class="file-row">
+  <span class="doc-preview doc-preview--zip" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-zip.svg" alt="">
+  <span class="doc-preview__ext">zip</span>
+</span>
+  <div class="file-row__info">
+    <p class="file-row__name">Last_School_Essay.zip</p>
+    <p class="file-row__size">1 MB</p>
+  </div>
+  <label class="file-row__pick">
+      <input type="radio" name="attach-file" value="Last_School_Essay.zip">
+      <span class="file-row__radio" aria-hidden="true"></span>
+      <span class="visually-hidden">Выбрать Last_School_Essay.zip</span>
+    </label>
+</div>
+    </li><li class="picker__file-group">
+      <div class="file-row">
+  <span class="doc-preview doc-preview--pdf" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-pdf.svg" alt="">
+  <span class="doc-preview__ext">pdf</span>
+</span>
+  <div class="file-row__info">
+    <p class="file-row__name">Last_School_Essay.pdf</p>
+    <p class="file-row__size">1 MB</p>
+  </div>
+  <label class="file-row__pick">
+      <input type="radio" name="attach-file" value="Last_School_Essay.pdf">
+      <span class="file-row__radio" aria-hidden="true"></span>
+      <span class="visually-hidden">Выбрать Last_School_Essay.pdf</span>
+    </label>
+</div>
+      <div class="file-row">
+  <span class="doc-preview doc-preview--zip" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-zip.svg" alt="">
+  <span class="doc-preview__ext">zip</span>
+</span>
+  <div class="file-row__info">
+    <p class="file-row__name">Last_School_Essay.zip</p>
+    <p class="file-row__size">1 MB</p>
+  </div>
+  <label class="file-row__pick">
+      <input type="radio" name="attach-file" value="Last_School_Essay.zip">
+      <span class="file-row__radio" aria-hidden="true"></span>
+      <span class="visually-hidden">Выбрать Last_School_Essay.zip</span>
+    </label>
+</div>
+    </li><li class="picker__file-group">
+      <div class="file-row">
+  <span class="doc-preview doc-preview--pdf" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-pdf.svg" alt="">
+  <span class="doc-preview__ext">pdf</span>
+</span>
+  <div class="file-row__info">
+    <p class="file-row__name">Last_School_Essay.pdf</p>
+    <p class="file-row__size">1 MB</p>
+  </div>
+  <label class="file-row__pick">
+      <input type="radio" name="attach-file" value="Last_School_Essay.pdf">
+      <span class="file-row__radio" aria-hidden="true"></span>
+      <span class="visually-hidden">Выбрать Last_School_Essay.pdf</span>
+    </label>
+</div>
+      <div class="file-row">
+  <span class="doc-preview doc-preview--zip" aria-hidden="true">
+  <img class="doc-preview__sticker" src="assets/img/chat-sticker-zip.svg" alt="">
+  <span class="doc-preview__ext">zip</span>
+</span>
+  <div class="file-row__info">
+    <p class="file-row__name">Last_School_Essay.zip</p>
+    <p class="file-row__size">1 MB</p>
+  </div>
+  <label class="file-row__pick">
+      <input type="radio" name="attach-file" value="Last_School_Essay.zip">
+      <span class="file-row__radio" aria-hidden="true"></span>
+      <span class="visually-hidden">Выбрать Last_School_Essay.zip</span>
+    </label>
+</div>
+    </li></ul></div>
+    <div class="picker__pane" id="picker-pane-video" role="tabpanel" aria-labelledby="picker-tab-video" hidden><ul class="picker__grid"><li class="picker__tile picker__tile--camera">
+      <button type="button" aria-label="Снять видео">
+        <img class="picker__img" src="assets/img/chat-photo-1.jpg" alt="">
+        <img class="picker__camera" src="assets/img/chat-camera.svg" alt="" width="36" height="36">
+      </button>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="2">
+        <img class="picker__img" src="assets/img/chat-photo-2.jpg" alt="Видео 2">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="3">
+        <img class="picker__img" src="assets/img/chat-photo-3.jpg" alt="Видео 3">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="4">
+        <img class="picker__img" src="assets/img/chat-photo-4.jpg" alt="Видео 4">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="5">
+        <img class="picker__img" src="assets/img/chat-photo-5.jpg" alt="Видео 5">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="6">
+        <img class="picker__img" src="assets/img/chat-photo-6.jpg" alt="Видео 6">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="7">
+        <img class="picker__img" src="assets/img/chat-photo-7.jpg" alt="Видео 7">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="8">
+        <img class="picker__img" src="assets/img/chat-photo-8.jpg" alt="Видео 8">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="9">
+        <img class="picker__img" src="assets/img/chat-photo-9.jpg" alt="Видео 9">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="10">
+        <img class="picker__img" src="assets/img/chat-photo-10.jpg" alt="Видео 10">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="11">
+        <img class="picker__img" src="assets/img/chat-photo-11.jpg" alt="Видео 11">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li><li class="picker__tile">
+      <label>
+        <input type="checkbox" name="attach-video" value="12">
+        <img class="picker__img" src="assets/img/chat-photo-12.jpg" alt="Видео 12">
+        <span class="picker__check" aria-hidden="true"></span>
+        <span class="picker__dur">0:25</span>
+      </label>
+    </li></ul></div>
+  </div>
+  <div class="picker__bottom">
+    <div class="picker__tabs" role="tablist" aria-label="Тип вложения">
+      <button class="picker__tab is-active" type="button" role="tab" id="picker-tab-photo" aria-selected="true" aria-controls="picker-pane-photo" data-tab="photo">
+      <span class="picker__tab-ic picker__tab-ic--box picker__tab-ic--photo"><svg class="icon icon--chat-tab-photo" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.5996 5.91046e-07C15.8398 5.91046e-07 16.9608 -0.000426471 17.8164 0.435547C18.5689 0.819016 19.181 1.43109 19.5645 2.18359C20.0004 3.03924 20 4.16018 20 6.40039V13.5996C20 15.8398 20.0004 16.9608 19.5645 17.8164C19.181 18.5689 18.5689 19.181 17.8164 19.5645C16.9608 20.0004 15.8398 20 13.5996 20H6.40039C4.16018 20 3.03924 20.0004 2.18359 19.5645C1.43109 19.181 0.819016 18.5689 0.435547 17.8164C-0.000426471 16.9608 5.91046e-07 15.8398 5.91046e-07 13.5996V6.40039C5.91046e-07 4.16018 -0.000426471 3.03924 0.435547 2.18359C0.819016 1.43109 1.43109 0.819016 2.18359 0.435547C3.03924 -0.000426471 4.16018 5.91046e-07 6.40039 5.91046e-07H13.5996ZM12.9258 9.63867C12.7253 9.33802 12.2819 9.34266 12.0879 9.64746L9.36231 13.9307C9.18204 14.2139 8.77906 14.2422 8.56055 13.9873L6.43945 11.5127C6.22094 11.2578 5.81796 11.2861 5.6377 11.5693L2.98926 15.7314C2.77744 16.0643 3.01659 16.5 3.41113 16.5H16.5654C16.9648 16.5 17.203 16.0549 16.9814 15.7227L12.9258 9.63867Z" fill="currentColor"/>
+</svg></span>
+      <span class="picker__tab-label">Фото</span>
+    </button>
+      <button class="picker__tab" type="button" role="tab" id="picker-tab-files" aria-selected="false" aria-controls="picker-pane-files" data-tab="files">
+      <span class="picker__tab-ic picker__tab-ic--box picker__tab-ic--files"><svg class="icon icon--chat-tab-files" aria-hidden="true" focusable="false" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.17481 5.76372e-07C9.66379 5.785e-07 9.90854 0.000415322 10.1387 0.0556646C10.3426 0.104665 10.5379 0.185317 10.7168 0.294922C10.9185 0.418595 11.0917 0.591743 11.4375 0.937501L16.0625 5.5625C16.4083 5.90826 16.5814 6.08148 16.7051 6.2832C16.8147 6.46206 16.8953 6.65736 16.9443 6.86133C16.9996 7.09146 17 7.33621 17 7.8252V13.5996C17 15.8398 17.0004 16.9608 16.5645 17.8164C16.181 18.5689 15.5689 19.181 14.8164 19.5645C13.9608 20.0004 12.8398 20 10.5996 20H6.40039C4.16018 20 3.03924 20.0004 2.18359 19.5645C1.43109 19.181 0.819016 18.5689 0.435547 17.8164C-0.000426491 16.9608 5.76372e-07 15.8398 5.76372e-07 13.5996V6.40039C5.76372e-07 4.16018 -0.000426491 3.03924 0.435547 2.18359C0.819016 1.43109 1.43109 0.819016 2.18359 0.435547C3.03924 -0.000426491 4.16018 5.76372e-07 6.40039 5.76372e-07H9.17481ZM10.3535 2.85352C10.0385 2.53861 9.50006 2.76165 9.5 3.20703V7C9.5 7.55229 9.94772 8 10.5 8H14.293C14.7384 7.99994 14.9614 7.46145 14.6465 7.14648L10.3535 2.85352Z" fill="currentColor"/>
+</svg></span>
+      <span class="picker__tab-label">Файлы</span>
+    </button>
+      <button class="picker__tab" type="button" role="tab" id="picker-tab-video" aria-selected="false" aria-controls="picker-pane-video" data-tab="video">
+      <span class="picker__tab-ic picker__tab-ic--box picker__tab-ic--video"><svg class="icon icon--chat-tab-video" aria-hidden="true" focusable="false" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.8887 6.11079L22.7572 5.14364C23.3884 4.98585 23.9998 5.46321 23.9998 6.11378V13.7745C23.9998 14.425 23.3884 14.9024 22.7572 14.7446L18.8887 13.7775V6.11079Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1 1H18.8889V16.8889C18.8889 17.9935 17.9935 18.8889 16.8889 18.8889H3C1.89543 18.8889 1 17.9935 1 16.8889V1Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg></span>
+      <span class="picker__tab-label">Видео</span>
+    </button>
+    </div>
+    <span class="picker__home" aria-hidden="true"></span>
+  </div>
+</section>
+<script src="js/chats.js"></script>
+  </div>
+</main>
+<footer class="footer d-only">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="О сервисе">
+          <a href="#">О компании</a>
+          <a href="#">Вопрос ответ</a>
+          <a href="#">Блог</a>
+          <a href="#">Способ оплаты</a>
+          <a href="#">Контакты</a>
+        </nav>
+        <nav class="footer__col footer__col--docs" aria-label="Документы">
+          <a href="#">Пользовательское соглашение</a>
+          <a href="#">Политика конфиденциальности</a>
+        </nav>
+        <div class="footer__col footer__col--social">
+          <a class="social-btn social-btn--telegram" href="#"><img src="assets/icons/telegram.svg" alt="" width="18" height="18">Написать в Telegram</a>
+          <a class="social-btn social-btn--viber" href="#"><img src="assets/icons/viber.svg" alt="" width="18" height="32">Viber</a>
+        </div>
+      </div>
+      <div class="footer__company">
+        <img class="footer__company-logo" src="assets/img/logo.png" alt="WeDo Market" width="88" height="100">
+        <p class="footer__company-text">ООО «ВеДу Маркет», Адрес: Республика Беларусь, 220100, Минск, ул. Сурганова, д. 57б, оф. 182.&nbsp; УНП 193662192.. Свидетельство о государственной регистрации № 193662192 выдано 16.12.2022 Минским горисполкомом</p>
+      </div>
+    </div>
+    <div class="footer__payments">
+      <img src="assets/img/webpay.png" alt="WebPay" width="130" height="43">
+      <img src="assets/icons/visa.svg" alt="Visa" width="50" height="16">
+      <img src="assets/icons/mastercard.svg" alt="Mastercard" width="103" height="16">
+      <img src="assets/img/belkart.png" alt="Белкарт" width="129" height="31">
+    </div>
+    <p class="footer__copy">2025 © Все права защищены WeDo Market - сервис подбора исполнителей</p>
+  </div>
+</footer>
+
+<nav class="m-nav m-only" aria-label="Мобильная навигация">
+  
+  <div class="m-nav__menu" id="m-nav-menu" role="menu">
+    <ul>
+      <li><a href="#" role="menuitem">О компании</a></li>
+      <li><a href="#" role="menuitem">Вопрос-ответ</a></li>
+      <li><a href="#" role="menuitem">Блог</a></li>
+      <li><a href="#" role="menuitem">Способ оплаты</a></li>
+      <li><a href="#" role="menuitem">Контакты</a></li>
+      <li><a class="is-accent" href="#" role="menuitem"><svg class="icon icon--m-settings" aria-hidden="true" focusable="false" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3156 1.33691H11.7927C11.1623 1.33691 10.5577 1.58735 10.1119 2.03312C9.66614 2.47889 9.41571 3.08348 9.41571 3.71389V3.92782C9.41528 4.34463 9.30525 4.75404 9.09665 5.11491C8.88804 5.47579 8.58822 5.77546 8.22722 5.98388L7.71618 6.28101C7.35484 6.48962 6.94494 6.59946 6.5277 6.59946C6.11045 6.59946 5.70057 6.48962 5.33921 6.28101L5.16094 6.18592C4.61551 5.87129 3.96751 5.78593 3.35921 5.9486C2.75091 6.11126 2.23199 6.50864 1.91638 7.05352L1.65493 7.50513C1.3403 8.05057 1.25494 8.69858 1.41759 9.30688C1.58025 9.91518 1.97764 10.4341 2.52251 10.7497L2.70078 10.8685C3.06003 11.0759 3.35875 11.3737 3.56725 11.7324C3.77574 12.091 3.88677 12.4979 3.88927 12.9127V13.5189C3.89092 13.9377 3.78189 14.3496 3.57319 14.7127C3.36449 15.0758 3.06353 15.3774 2.70078 15.5868L2.52251 15.6938C1.97764 16.0094 1.58025 16.5283 1.41759 17.1367C1.25494 17.7449 1.3403 18.393 1.65493 18.9383L1.91638 19.39C2.23199 19.9348 2.75091 20.3322 3.35921 20.4948C3.96751 20.6576 4.61551 20.5722 5.16094 20.2575L5.33921 20.1625C5.70057 19.9539 6.11045 19.8441 6.5277 19.8441C6.94494 19.8441 7.35484 19.9539 7.71618 20.1625L8.22722 20.4597C8.58822 20.6681 8.88804 20.9678 9.09665 21.3286C9.30525 21.6894 9.41528 22.0989 9.41571 22.5157V22.7296C9.41571 23.36 9.66614 23.9645 10.1119 24.4104C10.5577 24.856 11.1623 25.1065 11.7927 25.1065H12.3156C12.946 25.1065 13.5506 24.856 13.9964 24.4104C14.4421 23.9645 14.6926 23.36 14.6926 22.7296V22.5157C14.693 22.0989 14.803 21.6894 15.0116 21.3286C15.2202 20.9678 15.5201 20.6681 15.8811 20.4597L16.392 20.1625C16.7534 19.9539 17.1634 19.8441 17.5806 19.8441C17.9979 19.8441 18.4078 19.9539 18.7691 20.1625L18.9474 20.2575C19.4927 20.5722 20.1407 20.6576 20.749 20.4948C21.3575 20.3322 21.8762 19.9348 22.1919 19.39L22.4533 18.9264C22.7679 18.381 22.8533 17.733 22.6907 17.1247C22.528 16.5164 22.1306 15.9975 21.5858 15.6819L21.4075 15.5868C21.0448 15.3774 20.7438 15.0758 20.5351 14.7127C20.3263 14.3496 20.2174 13.9377 20.219 13.5189V12.9246C20.2174 12.5058 20.3263 12.0939 20.5351 11.7308C20.7438 11.3676 21.0448 11.0661 21.4075 10.8567L21.5858 10.7497C22.1306 10.4341 22.528 9.91518 22.6907 9.30688C22.8533 8.69858 22.7679 8.05057 22.4533 7.50513L22.1919 7.05352C21.8762 6.50864 21.3575 6.11126 20.749 5.9486C20.1407 5.78593 19.4927 5.87129 18.9474 6.18592L18.7691 6.28101C18.4078 6.48962 17.9979 6.59946 17.5806 6.59946C17.1634 6.59946 16.7534 6.48962 16.392 6.28101L15.8811 5.98388C15.5201 5.77546 15.2202 5.47579 15.0116 5.11491C14.803 4.75404 14.693 4.34463 14.6926 3.92782V3.71389C14.6926 3.08348 14.4421 2.47889 13.9964 2.03312C13.5506 1.58735 12.946 1.33691 12.3156 1.33691Z" stroke="currentColor" stroke-width="2.67408" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.0542 16.7862C14.0234 16.7862 15.6197 15.1899 15.6197 13.2207C15.6197 11.2516 14.0234 9.65527 12.0542 9.65527C10.0851 9.65527 8.48877 11.2516 8.48877 13.2207C8.48877 15.1899 10.0851 16.7862 12.0542 16.7862Z" stroke="currentColor" stroke-width="2.67408" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>Настройки</a></li>
+      <li><a class="is-accent" href="notification-settings.html" role="menuitem"><svg class="icon icon--nav-notification-settings" aria-hidden="true" focusable="false" viewBox="0 0 17.59 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon">
+<path id="Vector" d="M8.26375 14.3438C7.92065 14.3438 7.61352 14.2441 7.34236 14.0449C7.0712 13.8457 6.88029 13.5911 6.76961 13.2812H2.42V12.2188H6.76961C6.88029 11.9089 7.0712 11.6543 7.34236 11.4551C7.61352 11.2559 7.92065 11.1562 8.26375 11.1562C8.60685 11.1562 8.91398 11.2559 9.18514 11.4551C9.4563 11.6543 9.64721 11.9089 9.75789 12.2188H15.17V13.2812H9.75789C9.64721 13.5911 9.4563 13.8457 9.18514 14.0449C8.91398 14.2441 8.60685 14.3438 8.26375 14.3438ZM8.26375 13.2812C8.4187 13.2812 8.54598 13.2314 8.64559 13.1318C8.7452 13.0322 8.795 12.9077 8.795 12.7583C8.795 12.6089 8.7452 12.4816 8.64559 12.3765C8.54598 12.2713 8.42146 12.2188 8.27205 12.2188C8.12264 12.2188 7.99536 12.2713 7.89021 12.3765C7.78507 12.4816 7.7325 12.6089 7.7325 12.7583C7.7325 12.9077 7.78507 13.0322 7.89021 13.1318C7.99536 13.2314 8.11987 13.2812 8.26375 13.2812ZM11.9825 10.0938C11.6394 10.0938 11.3323 9.99414 11.0611 9.79492C10.79 9.5957 10.599 9.34115 10.4884 9.03125H2.42V7.96875H10.4884C10.599 7.65885 10.79 7.4043 11.0611 7.20508C11.3323 7.00586 11.6394 6.90625 11.9825 6.90625C12.3256 6.90625 12.6327 7.00586 12.9039 7.20508C13.175 7.4043 13.366 7.65885 13.4766 7.96875H15.17V9.03125H13.4766C13.366 9.34115 13.175 9.5957 12.9039 9.79492C12.6327 9.99414 12.3256 10.0938 11.9825 10.0938ZM11.9825 9.03125C12.1374 9.03125 12.2647 8.98145 12.3643 8.88184C12.4639 8.78223 12.5138 8.65771 12.5138 8.5083C12.5138 8.35889 12.4639 8.23161 12.3643 8.12646C12.2647 8.02132 12.1402 7.96875 11.9908 7.96875C11.8414 7.96875 11.7141 8.02132 11.609 8.12646C11.5038 8.23161 11.4513 8.35889 11.4513 8.5083C11.4513 8.65771 11.5038 8.78223 11.609 8.88184C11.7141 8.98145 11.8386 9.03125 11.9825 9.03125ZM6.13875 5.84375C5.79565 5.84375 5.48852 5.74414 5.21736 5.54492C4.9462 5.3457 4.75529 5.09115 4.64461 4.78125H2.42V3.71875H4.64461C4.75529 3.40885 4.9462 3.1543 5.21736 2.95508C5.48852 2.75586 5.79565 2.65625 6.13875 2.65625C6.48185 2.65625 6.78898 2.75586 7.06014 2.95508C7.3313 3.1543 7.52221 3.40885 7.63289 3.71875H15.17V4.78125H7.63289C7.52221 5.09115 7.3313 5.3457 7.06014 5.54492C6.78898 5.74414 6.48185 5.84375 6.13875 5.84375ZM6.13875 4.78125C6.2937 4.78125 6.42098 4.73145 6.52059 4.63184C6.6202 4.53223 6.67 4.40771 6.67 4.2583C6.67 4.10889 6.6202 3.98161 6.52059 3.87646C6.42098 3.77132 6.29646 3.71875 6.14705 3.71875C5.99764 3.71875 5.87036 3.77132 5.76521 3.87646C5.66007 3.98161 5.6075 4.10889 5.6075 4.2583C5.6075 4.40771 5.66007 4.53223 5.76521 4.63184C5.87036 4.73145 5.99487 4.78125 6.13875 4.78125Z" fill="currentColor"/>
+</g>
+</svg>Настройка уведомлений</a></li>
+      <li><a class="is-accent" href="#" role="menuitem"><svg class="icon icon--m-support" aria-hidden="true" focusable="false" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.15869 16.0555H4.13805C4.96077 16.0555 5.62773 16.7224 5.62773 17.5451V20.5244C5.62773 21.3471 4.96077 22.0142 4.13805 22.0142H1.15869V11.5864C1.15869 5.82734 5.82734 1.15869 11.5864 1.15869C17.3455 1.15869 22.0142 5.82734 22.0142 11.5864V22.0142H19.0348C18.212 22.0142 17.5451 21.3471 17.5451 20.5244V17.5451C17.5451 16.7224 18.212 16.0555 19.0348 16.0555H22.0142" stroke="currentColor" stroke-width="2.31754" stroke-linejoin="round"/>
+<path d="M21.6273 22.5513C21.2135 24.2065 19.3929 27.2685 15.4204 26.2754" stroke="currentColor" stroke-width="1.96099" stroke-linecap="round"/>
+</svg>Тех поддержка</a></li>
+    </ul>
+  </div>
+  <div class="m-nav__pill">
+    <a class="m-nav__btn" href="index.html" aria-label="Дашборд"><svg class="icon icon--m-home" aria-hidden="true" focusable="false" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.918 24.4065V14.704C15.918 14.3824 15.7902 14.0739 15.5628 13.8464C15.3353 13.619 15.0268 13.4912 14.7052 13.4912H9.85393C9.53227 13.4912 9.22379 13.619 8.99633 13.8464C8.7689 14.0739 8.64111 14.3824 8.64111 14.704V24.4065" stroke="currentColor" stroke-width="2.72882" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.36426 11.0661C1.36417 10.7133 1.44106 10.3647 1.58959 10.0446C1.73809 9.72452 1.95465 9.4407 2.22415 9.21294L10.7138 1.93729C11.1516 1.56728 11.7063 1.36426 12.2796 1.36426C12.8528 1.36426 13.4075 1.56728 13.8453 1.93729L22.3349 9.21294C22.6045 9.4407 22.821 9.72452 22.9694 10.0446C23.1181 10.3647 23.1948 10.7133 23.1948 11.0661V21.9815C23.1948 22.6247 22.9392 23.2416 22.4844 23.6966C22.0295 24.1514 21.4126 24.407 20.7693 24.407H3.78987C3.14656 24.407 2.52959 24.1514 2.0747 23.6966C1.61982 23.2416 1.36426 22.6247 1.36426 21.9815V11.0661Z" stroke="currentColor" stroke-width="2.72882" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a><a class="m-nav__btn" href="task-create-step1.html" aria-label="Задания"><svg class="icon icon--m-tasks" aria-hidden="true" focusable="false" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.18557 6.9128H14.9177M6.18557 11.2789H14.9177M6.18557 15.645H10.5517M4.00216 1.09131H17.1008C18.7084 1.09131 20.0115 2.39452 20.0115 4.00211L20.0112 21.4665C20.0112 23.0742 18.7079 24.3773 17.1004 24.3773L4.00204 24.3771C2.39449 24.3771 1.09131 23.074 1.09131 21.4664L1.09142 4.00203C1.09144 2.39449 2.39461 1.09131 4.00216 1.09131Z" stroke="currentColor" stroke-width="2.18306" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a><a class="m-nav__btn is-active" href="chats.html" aria-label="Чаты" aria-current="page"><svg class="icon icon--m-mail" aria-hidden="true" focusable="false" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.5876 1.18262H3.60823C2.2686 1.18262 1.18262 2.26862 1.18262 3.60825V16.9492C1.18262 18.2887 2.2686 19.3748 3.60823 19.3748H20.5876C21.9271 19.3748 23.0132 18.2887 23.0132 16.9492V3.60825C23.0132 2.26862 21.9271 1.18262 20.5876 1.18262Z" stroke="currentColor" stroke-width="2.36498"/>
+<path d="M23.0108 1.18262L13.9073 10.7918C12.9319 11.8215 11.2846 11.7981 10.3389 10.741L1.78662 1.18262" stroke="currentColor" stroke-width="2.36498"/>
+</svg></a><a class="m-nav__btn" href="#" aria-label="Платежи"><svg class="icon icon--m-card" aria-hidden="true" focusable="false" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.0131 1.18262H3.60823C2.2686 1.18262 1.18262 2.26862 1.18262 3.60825V15.7364C1.18262 17.076 2.2686 18.1619 3.60823 18.1619H23.0131C24.3528 18.1619 25.4389 17.076 25.4389 15.7364V3.60825C25.4389 2.26862 24.3528 1.18262 23.0131 1.18262Z" stroke="currentColor" stroke-width="2.36498" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.18262 7.24609H25.4389" stroke="currentColor" stroke-width="1.81922" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.7302 10.8843H4.62346C4.06529 10.8843 3.61279 11.02 3.61279 11.1875V11.7939C3.61279 11.9613 4.06529 12.0971 4.62346 12.0971H14.7302C15.2884 12.0971 15.7409 11.9613 15.7409 11.7939V11.1875C15.7409 11.02 15.2884 10.8843 14.7302 10.8843Z" stroke="currentColor" stroke-width="1.09153" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
+    <button class="m-nav__btn m-nav__btn--more" type="button" aria-label="Ещё" aria-haspopup="true" aria-expanded="false" aria-controls="m-nav-menu"><svg class="icon icon--m-dots" aria-hidden="true" focusable="false" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="21" cy="3" r="3" fill="currentColor"/>
+<circle cx="12" cy="3" r="3" fill="currentColor"/>
+<circle cx="3" cy="3" r="3" fill="currentColor"/>
+</svg></button>
+  </div>
+</nav>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

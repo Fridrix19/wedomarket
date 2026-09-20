@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Исполнители — WeDo Market</title>
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/performers.css">
+</head>
+<body>
+<div class="page">
+<header class="header d-only">
+  <div class="container header__inner">
+    <div class="header__left">
+      <a class="header__logo" href="index.html" aria-label="WeDo Market — на главную">
+        <img src="assets/img/logo.png" alt="WeDo Market" width="65" height="64">
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a class="nav__link" href="task-create-step1.html">Создать заказ</a>
+        <a class="nav__link" href="#">Найти задание</a>
+        <a class="nav__link" href="#">Исполнители</a>
+      </nav>
+    </div>
+    <div class="header__right">
+      <div class="header__icons">
+        <a class="icon-btn icon-btn--bell" href="#" aria-label="Уведомления"><img src="assets/icons/bell.svg" alt="" width="17" height="19"></a>
+        <a class="icon-btn" href="#" aria-label="Чаты"><img src="assets/icons/chat.svg" alt="" width="32" height="32"></a>
+      </div>
+      <div class="user">
+        <button class="user__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Меню пользователя">
+          <img class="user__avatar" src="assets/icons/avatar.svg" alt="" width="40" height="40">
+          <img class="user__chevron" src="assets/icons/chevron-down-sm.svg" alt="" width="16" height="16">
+        </button>
+        <div class="user__menu" role="menu">
+          <a href="index.html" role="menuitem">Дашборд</a>
+          <a href="#" role="menuitem">Профиль</a>
+          <a href="#" role="menuitem">Настройки</a>
+          <a href="#" role="menuitem">Выйти</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<header class="m-header m-only-flex m-header--deco">
+  <a class="m-header__logo" href="index.html" aria-label="WeDo Market — на главную"><img src="assets/img/logo-wordmark.svg" alt="WeDo Market" width="65" height="19"></a>
+  <a class="m-header__bell" href="notification-settings.html" aria-label="Уведомления"><svg class="icon icon--m-bell" aria-hidden="true" focusable="false" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.1797 24.3335C11.4143 24.8402 11.7517 25.261 12.1581 25.5535C12.5644 25.8462 13.0253 26.0002 13.4945 26.0002C13.9637 26.0002 14.4246 25.8462 14.8309 25.5535C15.2373 25.261 15.5747 24.8402 15.8093 24.3335" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.36288 17.2874C1.18144 17.4624 1.0617 17.68 1.01823 17.9138C0.974758 18.1476 1.00943 18.3874 1.11802 18.6042C1.22662 18.8209 1.40446 19.0053 1.62991 19.1347C1.85536 19.2642 2.1187 19.3332 2.3879 19.3334H24.6106C24.8798 19.3335 25.1433 19.2647 25.3687 19.1355C25.5943 19.0063 25.7725 18.8222 25.8814 18.6056C25.9902 18.3889 26.0252 18.1491 25.9821 17.9153C25.9389 17.6815 25.8196 17.4638 25.6385 17.2886C23.7912 15.6129 21.8329 13.8321 21.8329 8.33335C21.8329 6.38842 20.9548 4.52315 19.392 3.14788C17.8291 1.77262 15.7094 1 13.4993 1C11.2891 1 9.16942 1.77262 7.60658 3.14788C6.04374 4.52315 5.16574 6.38842 5.16574 8.33335C5.16574 13.8321 3.20599 15.6129 1.36288 17.2874Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><span class="m-header__dot" aria-hidden="true"></span></a>
+</header>
+<main class="page__main">
+  <div class="container">
+<div class="m-only"><a class="m-back" href="index.html">← Главная</a><h1 class="m-title perf-title">Исполнители</h1></div>
+<section class="perf" aria-labelledby="perf-title">
+  <h1 class="h2 d-only perf__title" id="perf-title">Исполнители</h1>
+  <form class="perf-filters" action="#" onsubmit="return false">
+    <div class="perf-filters__grid">
+      <div class="perf-filter">
+        <label class="perf-filter__label" for="perf-category">Категория</label>
+        <span class="perf-select">
+          <select class="perf-select__control" id="perf-category" name="category"><option value="0">Все категории</option><option value="1">Ремонт и строительство</option><option value="2">Клининг</option><option value="3">Сад и участок</option></select>
+          <i class="icon perf-select__icon icon--perf-chevron" aria-hidden="true"></i>
+        </span>
+      </div><div class="perf-filter">
+        <label class="perf-filter__label" for="perf-subcategory">Подкатегория</label>
+        <span class="perf-select">
+          <select class="perf-select__control" id="perf-subcategory" name="subcategory"><option value="0">Все подкатегории</option><option value="1">Кондиционеры</option><option value="2">Покраска</option><option value="3">Сантехника</option></select>
+          <i class="icon perf-select__icon icon--perf-chevron" aria-hidden="true"></i>
+        </span>
+      </div><div class="perf-filter">
+        <label class="perf-filter__label" for="perf-rating">Рейтинг от</label>
+        <span class="perf-select">
+          <select class="perf-select__control" id="perf-rating" name="rating"><option value="0">Любой</option><option value="1">3</option><option value="2">4</option><option value="3">5</option></select>
+          <i class="icon perf-select__icon icon--perf-chevron" aria-hidden="true"></i>
+        </span>
+      </div><div class="perf-filter">
+        <label class="perf-filter__label" for="perf-sort">Сортировка</label>
+        <span class="perf-select">
+          <select class="perf-select__control" id="perf-sort" name="sort"><option value="0">По рейтингу</option><option value="1">По отзывам</option><option value="2">По имени</option></select>
+          <i class="icon perf-select__icon icon--perf-chevron" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
+    <div class="perf-filters__actions">
+      <button class="btn btn--primary perf-btn" type="submit">Далее</button>
+      <button class="btn btn--gray perf-btn perf-btn--gray" type="reset">Сбросить</button>
+    </div>
+  </form>
+  <h2 class="perf__subtitle">Кандидаты</h2>
+  <ul class="perf-list">
+    <li class="perf-item">
+      <article class="perf-card" aria-labelledby="perf-name-0">
+        <img class="perf-card__avatar" src="assets/img/perf-avatar.png" alt="" width="92" height="89">
+        <h3 class="perf-card__name" id="perf-name-0">Max Max</h3>
+        <div class="perf-card__rating"><span class="perf-stars" role="img" aria-label="Рейтинг 5 из 5"><svg class="icon perf-stars__icon icon--perf-stars" aria-hidden="true" focusable="false" viewBox="0 0 81 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector">
+<path d="M2.27299 13L3.88365 8.03125L0 5.32813H4.75671L6.45769 0L8.18877 5.32813H12.9154L9.03173 8.03125L10.6725 13L6.45769 9.82813L2.27299 13Z" fill="currentColor"/>
+<path d="M19.2966 13L20.9072 8.03125L17.0236 5.32813H21.7803L23.4813 0L25.2123 5.32813H29.939L26.0553 8.03125L27.6961 13L23.4813 9.82813L19.2966 13Z" fill="currentColor"/>
+<path d="M36.3201 13L37.9308 8.03125L34.0471 5.32813H38.8039L40.5048 0L42.2359 5.32813H46.9625L43.0789 8.03125L44.7196 13L40.5048 9.82813L36.3201 13Z" fill="currentColor"/>
+<path d="M53.3439 13L54.9546 8.03125L51.071 5.32813H55.8277L57.5286 0L59.2597 5.32813H63.9863L60.1027 8.03125L61.7435 13L57.5286 9.82813L53.3439 13Z" fill="currentColor"/>
+<path d="M70.3576 13L71.9683 8.03125L68.0846 5.32813H72.8413L74.5423 0L76.2734 5.32813H81L77.1164 8.03125L78.7571 13L74.5423 9.82813L70.3576 13Z" fill="currentColor"/>
+</g>
+</svg></span><span class="perf-card__reviews">2 отзыва</span></div>
+        <p class="perf-card__desc">Обслуживание системы кондиционирования, Покраска деревянного забора</p>
+      </article>
+      <div class="perf-item__actions">
+        <button class="btn btn--primary perf-btn" type="button">Предложить задание</button>
+        <a class="btn btn--gray perf-btn perf-btn--gray" href="profile.html">Профиль</a>
+      </div>
+    </li><li class="perf-item">
+      <article class="perf-card" aria-labelledby="perf-name-1">
+        <img class="perf-card__avatar" src="assets/img/perf-avatar.png" alt="" width="92" height="89">
+        <h3 class="perf-card__name" id="perf-name-1">Max Max</h3>
+        <div class="perf-card__rating"><span class="perf-stars" role="img" aria-label="Рейтинг 5 из 5"><svg class="icon perf-stars__icon icon--perf-stars" aria-hidden="true" focusable="false" viewBox="0 0 81 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector">
+<path d="M2.27299 13L3.88365 8.03125L0 5.32813H4.75671L6.45769 0L8.18877 5.32813H12.9154L9.03173 8.03125L10.6725 13L6.45769 9.82813L2.27299 13Z" fill="currentColor"/>
+<path d="M19.2966 13L20.9072 8.03125L17.0236 5.32813H21.7803L23.4813 0L25.2123 5.32813H29.939L26.0553 8.03125L27.6961 13L23.4813 9.82813L19.2966 13Z" fill="currentColor"/>
+<path d="M36.3201 13L37.9308 8.03125L34.0471 5.32813H38.8039L40.5048 0L42.2359 5.32813H46.9625L43.0789 8.03125L44.7196 13L40.5048 9.82813L36.3201 13Z" fill="currentColor"/>
+<path d="M53.3439 13L54.9546 8.03125L51.071 5.32813H55.8277L57.5286 0L59.2597 5.32813H63.9863L60.1027 8.03125L61.7435 13L57.5286 9.82813L53.3439 13Z" fill="currentColor"/>
+<path d="M70.3576 13L71.9683 8.03125L68.0846 5.32813H72.8413L74.5423 0L76.2734 5.32813H81L77.1164 8.03125L78.7571 13L74.5423 9.82813L70.3576 13Z" fill="currentColor"/>
+</g>
+</svg></span><span class="perf-card__reviews">2 отзыва</span></div>
+        <p class="perf-card__desc">Обслуживание системы кондиционирования, Покраска деревянного забора</p>
+      </article>
+      <div class="perf-item__actions">
+        <button class="btn btn--primary perf-btn" type="button">Предложить задание</button>
+        <a class="btn btn--gray perf-btn perf-btn--gray" href="profile.html">Профиль</a>
+      </div>
+    </li><li class="perf-item">
+      <article class="perf-card" aria-labelledby="perf-name-2">
+        <img class="perf-card__avatar" src="assets/img/perf-avatar.png" alt="" width="92" height="89">
+        <h3 class="perf-card__name" id="perf-name-2">Max Max</h3>
+        <div class="perf-card__rating"><span class="perf-stars" role="img" aria-label="Рейтинг 5 из 5"><svg class="icon perf-stars__icon icon--perf-stars" aria-hidden="true" focusable="false" viewBox="0 0 81 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector">
+<path d="M2.27299 13L3.88365 8.03125L0 5.32813H4.75671L6.45769 0L8.18877 5.32813H12.9154L9.03173 8.03125L10.6725 13L6.45769 9.82813L2.27299 13Z" fill="currentColor"/>
+<path d="M19.2966 13L20.9072 8.03125L17.0236 5.32813H21.7803L23.4813 0L25.2123 5.32813H29.939L26.0553 8.03125L27.6961 13L23.4813 9.82813L19.2966 13Z" fill="currentColor"/>
+<path d="M36.3201 13L37.9308 8.03125L34.0471 5.32813H38.8039L40.5048 0L42.2359 5.32813H46.9625L43.0789 8.03125L44.7196 13L40.5048 9.82813L36.3201 13Z" fill="currentColor"/>
+<path d="M53.3439 13L54.9546 8.03125L51.071 5.32813H55.8277L57.5286 0L59.2597 5.32813H63.9863L60.1027 8.03125L61.7435 13L57.5286 9.82813L53.3439 13Z" fill="currentColor"/>
+<path d="M70.3576 13L71.9683 8.03125L68.0846 5.32813H72.8413L74.5423 0L76.2734 5.32813H81L77.1164 8.03125L78.7571 13L74.5423 9.82813L70.3576 13Z" fill="currentColor"/>
+</g>
+</svg></span><span class="perf-card__reviews">2 отзыва</span></div>
+        <p class="perf-card__desc">Обслуживание системы кондиционирования, Покраска деревянного забора</p>
+      </article>
+      <div class="perf-item__actions">
+        <button class="btn btn--primary perf-btn" type="button">Предложить задание</button>
+        <a class="btn btn--gray perf-btn perf-btn--gray" href="profile.html">Профиль</a>
+      </div>
+    </li><li class="perf-item">
+      <article class="perf-card perf-card--wide" aria-labelledby="perf-name-3">
+        <img class="perf-card__avatar" src="assets/img/perf-avatar.png" alt="" width="36" height="35">
+        <h3 class="perf-card__name" id="perf-name-3">Max Max</h3>
+        <div class="perf-card__rating"><span class="perf-stars" role="img" aria-label="Рейтинг 5 из 5"><svg class="icon perf-stars__icon icon--perf-stars" aria-hidden="true" focusable="false" viewBox="0 0 81 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector">
+<path d="M2.27299 13L3.88365 8.03125L0 5.32813H4.75671L6.45769 0L8.18877 5.32813H12.9154L9.03173 8.03125L10.6725 13L6.45769 9.82813L2.27299 13Z" fill="currentColor"/>
+<path d="M19.2966 13L20.9072 8.03125L17.0236 5.32813H21.7803L23.4813 0L25.2123 5.32813H29.939L26.0553 8.03125L27.6961 13L23.4813 9.82813L19.2966 13Z" fill="currentColor"/>
+<path d="M36.3201 13L37.9308 8.03125L34.0471 5.32813H38.8039L40.5048 0L42.2359 5.32813H46.9625L43.0789 8.03125L44.7196 13L40.5048 9.82813L36.3201 13Z" fill="currentColor"/>
+<path d="M53.3439 13L54.9546 8.03125L51.071 5.32813H55.8277L57.5286 0L59.2597 5.32813H63.9863L60.1027 8.03125L61.7435 13L57.5286 9.82813L53.3439 13Z" fill="currentColor"/>
+<path d="M70.3576 13L71.9683 8.03125L68.0846 5.32813H72.8413L74.5423 0L76.2734 5.32813H81L77.1164 8.03125L78.7571 13L74.5423 9.82813L70.3576 13Z" fill="currentColor"/>
+</g>
+</svg></span><span class="perf-card__reviews">0 отзывов</span></div>
+        <p class="perf-card__desc">Обслуживание системы кондиционирования, Покраска деревянного забора. Обслуживание системы кондиционирования, Покраска деревянного забора. Обслуживание системы кондиционирования, Покраска деревянного забора. Обслуживание системы кондиционирования.</p>
+      </article>
+      <div class="perf-item__actions">
+        <button class="btn btn--primary perf-btn" type="button">Предложить задание</button>
+        <a class="btn btn--gray perf-btn perf-btn--gray" href="profile.html">Профиль</a>
+      </div>
+    </li><li class="perf-item">
+      <article class="perf-card perf-card--wide" aria-labelledby="perf-name-4">
+        <img class="perf-card__avatar" src="assets/img/perf-avatar.png" alt="" width="36" height="35">
+        <h3 class="perf-card__name" id="perf-name-4">Max Max</h3>
+        <div class="perf-card__rating"><span class="perf-stars" role="img" aria-label="Рейтинг 5 из 5"><svg class="icon perf-stars__icon icon--perf-stars" aria-hidden="true" focusable="false" viewBox="0 0 81 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector">
+<path d="M2.27299 13L3.88365 8.03125L0 5.32813H4.75671L6.45769 0L8.18877 5.32813H12.9154L9.03173 8.03125L10.6725 13L6.45769 9.82813L2.27299 13Z" fill="currentColor"/>
+<path d="M19.2966 13L20.9072 8.03125L17.0236 5.32813H21.7803L23.4813 0L25.2123 5.32813H29.939L26.0553 8.03125L27.6961 13L23.4813 9.82813L19.2966 13Z" fill="currentColor"/>
+<path d="M36.3201 13L37.9308 8.03125L34.0471 5.32813H38.8039L40.5048 0L42.2359 5.32813H46.9625L43.0789 8.03125L44.7196 13L40.5048 9.82813L36.3201 13Z" fill="currentColor"/>
+<path d="M53.3439 13L54.9546 8.03125L51.071 5.32813H55.8277L57.5286 0L59.2597 5.32813H63.9863L60.1027 8.03125L61.7435 13L57.5286 9.82813L53.3439 13Z" fill="currentColor"/>
+<path d="M70.3576 13L71.9683 8.03125L68.0846 5.32813H72.8413L74.5423 0L76.2734 5.32813H81L77.1164 8.03125L78.7571 13L74.5423 9.82813L70.3576 13Z" fill="currentColor"/>
+</g>
+</svg></span><span class="perf-card__reviews">0 отзывов</span></div>
+        <p class="perf-card__desc">Обслуживание системы кондиционирования, Покраска деревянного забора. Обслуживание системы кондиционирования, Покраска деревянного забора. Обслуживание системы кондиционирования, Покраска деревянного забора. Обслуживание системы кондиционирования.</p>
+      </article>
+      <div class="perf-item__actions">
+        <button class="btn btn--primary perf-btn" type="button">Предложить задание</button>
+        <a class="btn btn--gray perf-btn perf-btn--gray" href="profile.html">Профиль</a>
+      </div>
+    </li>
+  </ul>
+  <nav class="perf-pagination" aria-label="Страницы">
+    <ul class="perf-pagination__list"><li><a class="perf-page" href="#" aria-label="Предыдущая страница">&lt;</a></li><li><a class="perf-page is-active" href="#" aria-current="page">1</a></li><li><a class="perf-page" href="#">2</a></li><li><span class="perf-page perf-page--dots" aria-hidden="true">...</span></li><li><a class="perf-page" href="#">31</a></li><li><a class="perf-page" href="#" aria-label="Следующая страница">&gt;</a></li></ul>
+  </nav>
+</section>
+<script src="js/performers.js"></script>
+  </div>
+</main>
+<footer class="footer d-only">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="О сервисе">
+          <a href="#">О компании</a>
+          <a href="#">Вопрос ответ</a>
+          <a href="#">Блог</a>
+          <a href="#">Способ оплаты</a>
+          <a href="#">Контакты</a>
+        </nav>
+        <nav class="footer__col footer__col--docs" aria-label="Документы">
+          <a href="#">Пользовательское соглашение</a>
+          <a href="#">Политика конфиденциальности</a>
+        </nav>
+        <div class="footer__col footer__col--social">
+          <a class="social-btn social-btn--telegram" href="#"><img src="assets/icons/telegram.svg" alt="" width="18" height="18">Написать в Telegram</a>
+          <a class="social-btn social-btn--viber" href="#"><img src="assets/icons/viber.svg" alt="" width="18" height="32">Viber</a>
+        </div>
+      </div>
+      <div class="footer__company">
+        <img class="footer__company-logo" src="assets/img/logo.png" alt="WeDo Market" width="88" height="100">
+        <p class="footer__company-text">ООО «ВеДу Маркет», Адрес: Республика Беларусь, 220100, Минск, ул. Сурганова, д. 57б, оф. 182.&nbsp; УНП 193662192.. Свидетельство о государственной регистрации № 193662192 выдано 16.12.2022 Минским горисполкомом</p>
+      </div>
+    </div>
+    <div class="footer__payments">
+      <img src="assets/img/webpay.png" alt="WebPay" width="130" height="43">
+      <img src="assets/icons/visa.svg" alt="Visa" width="50" height="16">
+      <img src="assets/icons/mastercard.svg" alt="Mastercard" width="103" height="16">
+      <img src="assets/img/belkart.png" alt="Белкарт" width="129" height="31">
+    </div>
+    <p class="footer__copy">2025 © Все права защищены WeDo Market - сервис подбора исполнителей</p>
+  </div>
+</footer>
+<footer class="m-footer m-only">
+  <div class="m-footer__links">
+    <a href="#">Пользовательское соглашение</a>
+    <a href="#">Политика конфиденциальности</a>
+  </div>
+  <p class="m-footer__company">ООО «ВеДу Маркет», Адрес: Республика Беларусь, 220100, Минск, ул. Сурганова, д. 57б, оф. 182. УНП 193662192.. Свидетельство о государственной регистрации № 193662192выдано 16.12.2022 Минским горисполкомом</p>
+  <p class="m-footer__copy">©2026 Все права защищены WeDo Market</p>
+</footer>
+<nav class="m-nav m-only" aria-label="Мобильная навигация">
+  
+  <div class="m-nav__menu" id="m-nav-menu" role="menu">
+    <ul>
+      <li><a href="#" role="menuitem">О компании</a></li>
+      <li><a href="#" role="menuitem">Вопрос-ответ</a></li>
+      <li><a href="#" role="menuitem">Блог</a></li>
+      <li><a href="#" role="menuitem">Способ оплаты</a></li>
+      <li><a href="#" role="menuitem">Контакты</a></li>
+      <li><a class="is-accent" href="#" role="menuitem"><svg class="icon icon--m-settings" aria-hidden="true" focusable="false" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3156 1.33691H11.7927C11.1623 1.33691 10.5577 1.58735 10.1119 2.03312C9.66614 2.47889 9.41571 3.08348 9.41571 3.71389V3.92782C9.41528 4.34463 9.30525 4.75404 9.09665 5.11491C8.88804 5.47579 8.58822 5.77546 8.22722 5.98388L7.71618 6.28101C7.35484 6.48962 6.94494 6.59946 6.5277 6.59946C6.11045 6.59946 5.70057 6.48962 5.33921 6.28101L5.16094 6.18592C4.61551 5.87129 3.96751 5.78593 3.35921 5.9486C2.75091 6.11126 2.23199 6.50864 1.91638 7.05352L1.65493 7.50513C1.3403 8.05057 1.25494 8.69858 1.41759 9.30688C1.58025 9.91518 1.97764 10.4341 2.52251 10.7497L2.70078 10.8685C3.06003 11.0759 3.35875 11.3737 3.56725 11.7324C3.77574 12.091 3.88677 12.4979 3.88927 12.9127V13.5189C3.89092 13.9377 3.78189 14.3496 3.57319 14.7127C3.36449 15.0758 3.06353 15.3774 2.70078 15.5868L2.52251 15.6938C1.97764 16.0094 1.58025 16.5283 1.41759 17.1367C1.25494 17.7449 1.3403 18.393 1.65493 18.9383L1.91638 19.39C2.23199 19.9348 2.75091 20.3322 3.35921 20.4948C3.96751 20.6576 4.61551 20.5722 5.16094 20.2575L5.33921 20.1625C5.70057 19.9539 6.11045 19.8441 6.5277 19.8441C6.94494 19.8441 7.35484 19.9539 7.71618 20.1625L8.22722 20.4597C8.58822 20.6681 8.88804 20.9678 9.09665 21.3286C9.30525 21.6894 9.41528 22.0989 9.41571 22.5157V22.7296C9.41571 23.36 9.66614 23.9645 10.1119 24.4104C10.5577 24.856 11.1623 25.1065 11.7927 25.1065H12.3156C12.946 25.1065 13.5506 24.856 13.9964 24.4104C14.4421 23.9645 14.6926 23.36 14.6926 22.7296V22.5157C14.693 22.0989 14.803 21.6894 15.0116 21.3286C15.2202 20.9678 15.5201 20.6681 15.8811 20.4597L16.392 20.1625C16.7534 19.9539 17.1634 19.8441 17.5806 19.8441C17.9979 19.8441 18.4078 19.9539 18.7691 20.1625L18.9474 20.2575C19.4927 20.5722 20.1407 20.6576 20.749 20.4948C21.3575 20.3322 21.8762 19.9348 22.1919 19.39L22.4533 18.9264C22.7679 18.381 22.8533 17.733 22.6907 17.1247C22.528 16.5164 22.1306 15.9975 21.5858 15.6819L21.4075 15.5868C21.0448 15.3774 20.7438 15.0758 20.5351 14.7127C20.3263 14.3496 20.2174 13.9377 20.219 13.5189V12.9246C20.2174 12.5058 20.3263 12.0939 20.5351 11.7308C20.7438 11.3676 21.0448 11.0661 21.4075 10.8567L21.5858 10.7497C22.1306 10.4341 22.528 9.91518 22.6907 9.30688C22.8533 8.69858 22.7679 8.05057 22.4533 7.50513L22.1919 7.05352C21.8762 6.50864 21.3575 6.11126 20.749 5.9486C20.1407 5.78593 19.4927 5.87129 18.9474 6.18592L18.7691 6.28101C18.4078 6.48962 17.9979 6.59946 17.5806 6.59946C17.1634 6.59946 16.7534 6.48962 16.392 6.28101L15.8811 5.98388C15.5201 5.77546 15.2202 5.47579 15.0116 5.11491C14.803 4.75404 14.693 4.34463 14.6926 3.92782V3.71389C14.6926 3.08348 14.4421 2.47889 13.9964 2.03312C13.5506 1.58735 12.946 1.33691 12.3156 1.33691Z" stroke="currentColor" stroke-width="2.67408" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.0542 16.7862C14.0234 16.7862 15.6197 15.1899 15.6197 13.2207C15.6197 11.2516 14.0234 9.65527 12.0542 9.65527C10.0851 9.65527 8.48877 11.2516 8.48877 13.2207C8.48877 15.1899 10.0851 16.7862 12.0542 16.7862Z" stroke="currentColor" stroke-width="2.67408" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>Настройки</a></li>
+      <li><a class="is-accent" href="notification-settings.html" role="menuitem"><svg class="icon icon--nav-notification-settings" aria-hidden="true" focusable="false" viewBox="0 0 17.59 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon">
+<path id="Vector" d="M8.26375 14.3438C7.92065 14.3438 7.61352 14.2441 7.34236 14.0449C7.0712 13.8457 6.88029 13.5911 6.76961 13.2812H2.42V12.2188H6.76961C6.88029 11.9089 7.0712 11.6543 7.34236 11.4551C7.61352 11.2559 7.92065 11.1562 8.26375 11.1562C8.60685 11.1562 8.91398 11.2559 9.18514 11.4551C9.4563 11.6543 9.64721 11.9089 9.75789 12.2188H15.17V13.2812H9.75789C9.64721 13.5911 9.4563 13.8457 9.18514 14.0449C8.91398 14.2441 8.60685 14.3438 8.26375 14.3438ZM8.26375 13.2812C8.4187 13.2812 8.54598 13.2314 8.64559 13.1318C8.7452 13.0322 8.795 12.9077 8.795 12.7583C8.795 12.6089 8.7452 12.4816 8.64559 12.3765C8.54598 12.2713 8.42146 12.2188 8.27205 12.2188C8.12264 12.2188 7.99536 12.2713 7.89021 12.3765C7.78507 12.4816 7.7325 12.6089 7.7325 12.7583C7.7325 12.9077 7.78507 13.0322 7.89021 13.1318C7.99536 13.2314 8.11987 13.2812 8.26375 13.2812ZM11.9825 10.0938C11.6394 10.0938 11.3323 9.99414 11.0611 9.79492C10.79 9.5957 10.599 9.34115 10.4884 9.03125H2.42V7.96875H10.4884C10.599 7.65885 10.79 7.4043 11.0611 7.20508C11.3323 7.00586 11.6394 6.90625 11.9825 6.90625C12.3256 6.90625 12.6327 7.00586 12.9039 7.20508C13.175 7.4043 13.366 7.65885 13.4766 7.96875H15.17V9.03125H13.4766C13.366 9.34115 13.175 9.5957 12.9039 9.79492C12.6327 9.99414 12.3256 10.0938 11.9825 10.0938ZM11.9825 9.03125C12.1374 9.03125 12.2647 8.98145 12.3643 8.88184C12.4639 8.78223 12.5138 8.65771 12.5138 8.5083C12.5138 8.35889 12.4639 8.23161 12.3643 8.12646C12.2647 8.02132 12.1402 7.96875 11.9908 7.96875C11.8414 7.96875 11.7141 8.02132 11.609 8.12646C11.5038 8.23161 11.4513 8.35889 11.4513 8.5083C11.4513 8.65771 11.5038 8.78223 11.609 8.88184C11.7141 8.98145 11.8386 9.03125 11.9825 9.03125ZM6.13875 5.84375C5.79565 5.84375 5.48852 5.74414 5.21736 5.54492C4.9462 5.3457 4.75529 5.09115 4.64461 4.78125H2.42V3.71875H4.64461C4.75529 3.40885 4.9462 3.1543 5.21736 2.95508C5.48852 2.75586 5.79565 2.65625 6.13875 2.65625C6.48185 2.65625 6.78898 2.75586 7.06014 2.95508C7.3313 3.1543 7.52221 3.40885 7.63289 3.71875H15.17V4.78125H7.63289C7.52221 5.09115 7.3313 5.3457 7.06014 5.54492C6.78898 5.74414 6.48185 5.84375 6.13875 5.84375ZM6.13875 4.78125C6.2937 4.78125 6.42098 4.73145 6.52059 4.63184C6.6202 4.53223 6.67 4.40771 6.67 4.2583C6.67 4.10889 6.6202 3.98161 6.52059 3.87646C6.42098 3.77132 6.29646 3.71875 6.14705 3.71875C5.99764 3.71875 5.87036 3.77132 5.76521 3.87646C5.66007 3.98161 5.6075 4.10889 5.6075 4.2583C5.6075 4.40771 5.66007 4.53223 5.76521 4.63184C5.87036 4.73145 5.99487 4.78125 6.13875 4.78125Z" fill="currentColor"/>
+</g>
+</svg>Настройка уведомлений</a></li>
+      <li><a class="is-accent" href="#" role="menuitem"><svg class="icon icon--m-support" aria-hidden="true" focusable="false" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.15869 16.0555H4.13805C4.96077 16.0555 5.62773 16.7224 5.62773 17.5451V20.5244C5.62773 21.3471 4.96077 22.0142 4.13805 22.0142H1.15869V11.5864C1.15869 5.82734 5.82734 1.15869 11.5864 1.15869C17.3455 1.15869 22.0142 5.82734 22.0142 11.5864V22.0142H19.0348C18.212 22.0142 17.5451 21.3471 17.5451 20.5244V17.5451C17.5451 16.7224 18.212 16.0555 19.0348 16.0555H22.0142" stroke="currentColor" stroke-width="2.31754" stroke-linejoin="round"/>
+<path d="M21.6273 22.5513C21.2135 24.2065 19.3929 27.2685 15.4204 26.2754" stroke="currentColor" stroke-width="1.96099" stroke-linecap="round"/>
+</svg>Тех поддержка</a></li>
+    </ul>
+  </div>
+  <div class="m-nav__pill">
+    <a class="m-nav__btn" href="index.html" aria-label="Дашборд"><svg class="icon icon--m-home" aria-hidden="true" focusable="false" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.918 24.4065V14.704C15.918 14.3824 15.7902 14.0739 15.5628 13.8464C15.3353 13.619 15.0268 13.4912 14.7052 13.4912H9.85393C9.53227 13.4912 9.22379 13.619 8.99633 13.8464C8.7689 14.0739 8.64111 14.3824 8.64111 14.704V24.4065" stroke="currentColor" stroke-width="2.72882" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.36426 11.0661C1.36417 10.7133 1.44106 10.3647 1.58959 10.0446C1.73809 9.72452 1.95465 9.4407 2.22415 9.21294L10.7138 1.93729C11.1516 1.56728 11.7063 1.36426 12.2796 1.36426C12.8528 1.36426 13.4075 1.56728 13.8453 1.93729L22.3349 9.21294C22.6045 9.4407 22.821 9.72452 22.9694 10.0446C23.1181 10.3647 23.1948 10.7133 23.1948 11.0661V21.9815C23.1948 22.6247 22.9392 23.2416 22.4844 23.6966C22.0295 24.1514 21.4126 24.407 20.7693 24.407H3.78987C3.14656 24.407 2.52959 24.1514 2.0747 23.6966C1.61982 23.2416 1.36426 22.6247 1.36426 21.9815V11.0661Z" stroke="currentColor" stroke-width="2.72882" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a><a class="m-nav__btn" href="task-create-step1.html" aria-label="Задания"><svg class="icon icon--m-tasks" aria-hidden="true" focusable="false" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.18557 6.9128H14.9177M6.18557 11.2789H14.9177M6.18557 15.645H10.5517M4.00216 1.09131H17.1008C18.7084 1.09131 20.0115 2.39452 20.0115 4.00211L20.0112 21.4665C20.0112 23.0742 18.7079 24.3773 17.1004 24.3773L4.00204 24.3771C2.39449 24.3771 1.09131 23.074 1.09131 21.4664L1.09142 4.00203C1.09144 2.39449 2.39461 1.09131 4.00216 1.09131Z" stroke="currentColor" stroke-width="2.18306" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a><a class="m-nav__btn" href="chats.html" aria-label="Чаты"><svg class="icon icon--m-mail" aria-hidden="true" focusable="false" viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20.5876 1.18262H3.60823C2.2686 1.18262 1.18262 2.26862 1.18262 3.60825V16.9492C1.18262 18.2887 2.2686 19.3748 3.60823 19.3748H20.5876C21.9271 19.3748 23.0132 18.2887 23.0132 16.9492V3.60825C23.0132 2.26862 21.9271 1.18262 20.5876 1.18262Z" stroke="currentColor" stroke-width="2.36498"/>
+<path d="M23.0108 1.18262L13.9073 10.7918C12.9319 11.8215 11.2846 11.7981 10.3389 10.741L1.78662 1.18262" stroke="currentColor" stroke-width="2.36498"/>
+</svg></a><a class="m-nav__btn" href="#" aria-label="Платежи"><svg class="icon icon--m-card" aria-hidden="true" focusable="false" viewBox="0 0 27 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.0131 1.18262H3.60823C2.2686 1.18262 1.18262 2.26862 1.18262 3.60825V15.7364C1.18262 17.076 2.2686 18.1619 3.60823 18.1619H23.0131C24.3528 18.1619 25.4389 17.076 25.4389 15.7364V3.60825C25.4389 2.26862 24.3528 1.18262 23.0131 1.18262Z" stroke="currentColor" stroke-width="2.36498" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.18262 7.24609H25.4389" stroke="currentColor" stroke-width="1.81922" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.7302 10.8843H4.62346C4.06529 10.8843 3.61279 11.02 3.61279 11.1875V11.7939C3.61279 11.9613 4.06529 12.0971 4.62346 12.0971H14.7302C15.2884 12.0971 15.7409 11.9613 15.7409 11.7939V11.1875C15.7409 11.02 15.2884 10.8843 14.7302 10.8843Z" stroke="currentColor" stroke-width="1.09153" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></a>
+    <button class="m-nav__btn m-nav__btn--more" type="button" aria-label="Ещё" aria-haspopup="true" aria-expanded="false" aria-controls="m-nav-menu"><svg class="icon icon--m-dots" aria-hidden="true" focusable="false" viewBox="0 0 24 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="21" cy="3" r="3" fill="currentColor"/>
+<circle cx="12" cy="3" r="3" fill="currentColor"/>
+<circle cx="3" cy="3" r="3" fill="currentColor"/>
+</svg></button>
+  </div>
+</nav>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

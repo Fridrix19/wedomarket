@@ -1,0 +1,281 @@
+/* ==========================================================================
+   WeDo Market — базовые стили: токены, шрифты, сброс, типографика, кнопки, формы
+   ========================================================================== */
+
+/* ---- Шрифт Gilroy (положите файлы в /fonts, см. fonts/README.md) ---- */
+@font-face { font-family: "Gilroy"; font-weight: 300; font-style: normal; font-display: swap;
+  src: url("../fonts/Gilroy-Light.woff2") format("woff2"), url("../fonts/Gilroy-Light.woff") format("woff"); }
+@font-face { font-family: "Gilroy"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff"); }
+@font-face { font-family: "Gilroy"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff"); }
+@font-face { font-family: "Gilroy"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"), url("../fonts/Gilroy-SemiBold.woff") format("woff"); }
+@font-face { font-family: "Gilroy"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff"); }
+
+/* ---- Токены ---- */
+:root {
+  --font-main: "Gilroy", "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-ubuntu: "Ubuntu", var(--font-main);
+
+  --c-primary: #52c865;
+  --c-primary-hover: #45b858;
+  --c-white: #fff;
+  --c-black: #000;
+  --c-text: #212121;
+  --c-text-2: #434343;
+  --c-text-3: #3f3f3f;
+  --c-text-4: #414141;
+  --c-text-5: #484848;
+  --c-text-6: #494949;
+  --c-text-7: #424242;
+  --c-muted: #b6b6b6;
+  --c-muted-2: #878787;
+  --c-muted-3: #979797;
+  --c-muted-4: #706f6f;
+  --c-muted-5: #9b9b9b;
+  --c-muted-6: #9e9e9e;
+  --c-muted-7: #616161;
+  --c-disabled: #a59696;
+  --c-desc: #7f7f7f;
+  --c-border: #d8d8d8;
+  --c-border-2: #e0e0e0;
+  --c-border-3: #b3b0b0;
+  --c-border-dash: #bdbdbd;
+  --c-gray: #e8e8e8;
+  --c-gray-bg: #fafafa;
+  --c-success-bg: #ecfdf3;
+  --c-success-text: #027a48;
+  --c-yellow: #f9ba39;
+  --c-telegram: #34aadf;
+  --c-telegram-bg: #eef5fe;
+  --c-viber: #7360f2;
+  --c-viber-bg: #ece9ff;
+
+  --shadow-header: 0 0 6.7px rgba(0, 0, 0, 0.09);
+  --shadow-card: 0 0 2px rgba(82, 200, 101, 0.25);
+  --shadow-card-lg: 0 0 7.3px rgba(82, 200, 101, 0.35);
+  --shadow-card-yellow: 0 0 7.3px rgba(249, 186, 57, 0.35);
+  --shadow-btn: 0 2px 4px rgba(82, 200, 101, 0.35);
+
+  --radius: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --container: 1320px;
+  --gutter: 20px;
+  --header-h: 88px;
+  --sidebar-w: 244px;
+}
+
+/* ---- Сброс ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: normal;
+  color: var(--c-text);
+  background: var(--c-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, p { margin: 0; font-weight: 500; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+input::placeholder, textarea::placeholder { color: var(--c-muted-2); opacity: 1; }
+:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---- Типографика ---- */
+.h1 { font-size: 48px; font-weight: 500; line-height: 1.3; color: var(--c-black); }
+.h2 { font-size: 32px; font-weight: 500; color: var(--c-black); }
+.h3 { font-size: 24px; font-weight: 500; color: var(--c-text); }
+.text-muted { color: var(--c-muted); }
+
+/* ---- Иконки через маску (перекрашиваются через color) ---- */
+.icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  color: inherit;
+}
+/* Запасной вариант, если SVG не встроен в HTML (маска + фон): */
+i.icon {
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+
+/* Иконки-маски (путь относительно css/) */
+.icon--24 { width: 24px; height: 24px; }
+.icon--nav-dashboard { --icon: url("../assets/icons/nav-dashboard.svg"); }
+.icon--nav-tasks { --icon: url("../assets/icons/nav-tasks.svg"); }
+.icon--nav-payments { --icon: url("../assets/icons/nav-payments.svg"); }
+.icon--nav-notifications { --icon: url("../assets/icons/nav-notifications.svg"); }
+.icon--nav-notification-settings { --icon: url("../assets/icons/nav-notification-settings.svg"); }
+.icon--nav-chats { --icon: url("../assets/icons/nav-chats.svg"); }
+.icon--nav-support { --icon: url("../assets/icons/nav-support.svg"); }
+.icon--nav-settings { --icon: url("../assets/icons/nav-settings.svg"); }
+.icon--nav-logout { --icon: url("../assets/icons/nav-logout.svg"); }
+.icon--nav-chevron { --icon: url("../assets/icons/nav-chevron.svg"); }
+.icon--calendar { --icon: url("../assets/icons/calendar.svg"); }
+.icon--chevron-down { --icon: url("../assets/icons/chevron-down.svg"); }
+.icon--link { --icon: url("../assets/icons/link.svg"); }
+
+/* ---- Кнопки ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color .15s ease, opacity .15s ease, box-shadow .15s ease;
+}
+.btn--primary { background: var(--c-primary); color: var(--c-white); }
+.btn--primary:hover { background: var(--c-primary-hover); }
+.btn--gray { background: var(--c-gray); color: var(--c-text); }
+.btn--gray:hover { background: #dedede; }
+.btn--outline {
+  background: var(--c-white);
+  border: 1px solid var(--c-border-2);
+  color: var(--c-text);
+  font-size: 15px;
+}
+.btn--outline:hover { border-color: var(--c-muted); }
+.btn--sm { font-size: 15px; }
+.btn--lg { height: 48px; border-radius: var(--radius-lg); }
+.btn--block { width: 100%; }
+.btn--pill {
+  height: auto;
+  padding: 8px 16px;
+  gap: 5px;
+  border: 1px solid var(--c-border-3);
+  border-radius: 38px;
+  background: var(--c-white);
+  color: var(--c-text);
+  font-weight: 500;
+}
+.btn--pill:hover { border-color: var(--c-text); }
+
+/* ---- Поля форм ---- */
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.field__label { font-size: 16px; font-weight: 500; color: var(--c-text-3); }
+.input,
+.textarea,
+.select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 20px;
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--c-text);
+  transition: border-color .15s ease;
+}
+.input:hover, .textarea:hover, .select:hover { border-color: var(--c-muted-2); }
+.input:focus, .textarea:focus, .select:focus { outline: none; border-color: var(--c-primary); }
+.textarea { min-height: 199px; resize: vertical; }
+.input--icon { position: relative; }
+.input--icon .input { padding-right: 56px; }
+.input--icon .icon {
+  position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; color: var(--c-text); pointer-events: none;
+}
+.input-row { display: flex; align-items: flex-end; gap: 18px; }
+.input-row .field { flex: 1 1 auto; }
+.input-row .select-time { flex: 0 0 auto; }
+
+/* Селект времени (00:00 ⌄) */
+.select-time {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 8px 0 16px;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-white);
+  font-family: var(--font-ubuntu);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--c-muted-2);
+  cursor: pointer;
+}
+.select-time .icon { width: 24px; height: 24px; }
+.select-time select {
+  appearance: none; -webkit-appearance: none;
+  border: 0; background: transparent; padding: 0; color: inherit; cursor: pointer;
+}
+
+/* Быстрые ссылки "Сегодня / Завтра" */
+.quick-dates { display: flex; gap: 16px; font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.01em; color: var(--c-muted-3); }
+.quick-dates button {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-position: from-font;
+}
+.quick-dates button:hover { color: var(--c-text); }
+
+/* Радио-кнопки */
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+.radio input { position: absolute; opacity: 0; width: 0; height: 0; }
+.radio__box {
+  position: relative; flex: 0 0 auto; width: 24px; height: 24px;
+  border: 1px solid var(--c-border-3); border-radius: 50%; background: var(--c-white);
+  transition: border-color .15s ease;
+}
+.radio__box::after {
+  content: ""; position: absolute; inset: 4px; border-radius: 50%;
+  background: var(--c-primary); transform: scale(0); transition: transform .15s ease;
+}
+.radio input:checked + .radio__box { border-color: var(--c-primary); }
+.radio input:checked + .radio__box::after { transform: scale(1); }
+.radio input:focus-visible + .radio__box { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+.radio__label { font-size: 16px; font-weight: 500; color: var(--c-text-3); }
+.radio--disabled { cursor: default; }
+.radio--disabled .radio__box { border-color: var(--c-border); background: #f3f3f3; }
+.radio--disabled .radio__label { color: var(--c-disabled); }
+.radio-group { display: flex; flex-direction: column; gap: 11px; }
+.radio-desc { font-size: 14px; font-weight: 400; color: var(--c-desc); max-width: 449px; }
+.radio-desc--disabled { color: var(--c-disabled); max-width: 340px; }
+
+/* Файлы */
+.file-pick { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.file-pick__hint { font-size: 16px; font-weight: 500; color: var(--c-muted-4); }
+
+/* Статусы */
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 117px; height: 24px; padding: 0 12px; border-radius: 34px;
+  font-size: 16px; font-weight: 500; white-space: nowrap;
+}
+.badge--success { background: var(--c-success-bg); color: var(--c-success-text); }
+.badge--price {
+  min-width: 118px; height: auto; padding: 0 8px; border-radius: 6px;
+  background: var(--c-yellow); color: var(--c-white); font-size: 24px; font-weight: 700;
+}

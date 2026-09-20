@@ -1,0 +1,141 @@
+/* ==========================================================================
+   WeDo Market — мобильный каркас (≤767px): шапка, нижняя навигация, меню, футер
+   Десктопная шапка/сайдбар/футер скрываются, мобильные — показываются.
+   ========================================================================== */
+
+
+/* Иконки-маски мобильного каркаса (путь относительно css/) */
+.icon--m-bell { --icon: url("../assets/icons/m-bell.svg"); }
+.icon--m-home { --icon: url("../assets/icons/m-home.svg"); }
+.icon--m-tasks { --icon: url("../assets/icons/m-tasks.svg"); }
+.icon--m-mail { --icon: url("../assets/icons/m-mail.svg"); }
+.icon--m-card { --icon: url("../assets/icons/m-card.svg"); }
+.icon--m-sliders { --icon: url("../assets/icons/m-sliders.svg"); }
+.icon--m-video { --icon: url("../assets/icons/m-video.svg"); }
+.icon--m-record { --icon: url("../assets/icons/m-record.svg"); }
+.icon--m-dots { --icon: url("../assets/icons/m-dots.svg"); }
+.icon--m-settings { --icon: url("../assets/icons/m-settings.svg"); }
+.icon--m-support { --icon: url("../assets/icons/m-support.svg"); }
+
+/* Переключатели видимости */
+.m-only, .m-only-flex { display: none !important; }
+@media (max-width: 767px) {
+  .m-only { display: block !important; }
+  .m-only-flex { display: flex !important; }
+  .d-only { display: none !important; }
+}
+
+@media (max-width: 767px) {
+  :root { --gutter: 17px; --nav-h: 64px; }
+
+  .page__main { padding: 0 0 40px; min-height: 0; }
+  .page__main--wizard { padding-top: 0; }
+
+  /* ---- Шапка ---- */
+  .m-header {
+    position: relative; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 75px; padding: 0 16px 0 17px; background: var(--c-white);
+    overflow: hidden;
+  }
+  .m-header__logo img { width: 65px; height: 19px; }
+  .m-header__bell {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    width: 27px; height: 27px; border-radius: 50%; background: var(--c-primary); color: var(--c-white);
+  }
+  .m-header__bell .icon { width: 21px; height: 21px; }
+  .m-header__dot {
+    position: absolute; right: -4px; top: 0; width: 8px; height: 8px; border-radius: 50%; background: #ff3b30;
+  }
+  /* декоративные круги (чаты, исполнители, уведомления) */
+  .m-header--deco::before, .m-header--deco::after {
+    content: ""; position: absolute; border-radius: 50%; background: #f1eefb; pointer-events: none; z-index: -1;
+  }
+  .m-header--deco::before { width: 120px; height: 120px; left: 120px; top: -60px; }
+  .m-header--deco::after { width: 90px; height: 90px; right: -20px; top: 30px; }
+  .m-header--deco { z-index: 1; }
+
+  /* ---- Хлебная крошка и заголовок ---- */
+  .m-back {
+    display: inline-block; margin-top: 0; font-size: 16px; font-weight: 300; line-height: 22px;
+    color: #bababa; text-decoration: underline;
+  }
+  .m-title { margin: 15px 0 24px; font-size: 32px; font-weight: 600; line-height: 32px; color: var(--c-text); }
+  .m-title--sm { font-size: 24px; line-height: 28px; }
+
+  /* ---- Нижняя навигация ---- */
+  .m-nav {
+    position: fixed; left: 0; right: 0; bottom: 8px; z-index: 50;
+    padding: 0 16px; pointer-events: none;
+  }
+  .m-nav > * { pointer-events: auto; }
+  .m-nav__pill {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between;
+    height: var(--nav-h); padding: 8px; margin: 0 auto; max-width: 342px;
+    background: var(--c-white); border-radius: 39px;
+    box-shadow: 0 0 10px rgba(82, 200, 101, 0.45);
+  }
+  .m-nav__btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 48px; height: 48px; border-radius: 50%; background: var(--c-white); color: var(--c-primary);
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .m-nav__btn .icon { width: 29px; height: 29px; }
+  .m-nav__btn.is-active { background: var(--c-primary); color: var(--c-white); }
+  .m-nav__btn--more .icon { width: 24px; height: 6px; }
+
+  /* Выпадающее меню над навигацией */
+  .m-nav__menu {
+    position: absolute; left: 16px; right: 16px; bottom: calc(var(--nav-h) + 8px);
+    margin: 0 auto; max-width: 342px; padding: 16px 16px 24px;
+    background: var(--c-white); border-radius: 16px;
+    box-shadow: 0 0 10px rgba(82, 200, 101, 0.45);
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s;
+  }
+  .m-nav__menu::after {
+    content: ""; position: absolute; left: 50%; bottom: -12px; width: 30px; height: 20px;
+    margin-left: -15px; background: var(--c-white);
+  }
+  .m-nav.is-open .m-nav__menu { opacity: 1; visibility: visible; transform: none; }
+  .m-nav__menu a {
+    display: flex; align-items: center; gap: 8px; height: 35px;
+    font-size: 16px; font-weight: 500; line-height: 27.2px; color: #737373;
+  }
+  .m-nav__menu a .icon { width: 16px; height: 16px; }
+  .m-nav__menu a.is-accent { color: var(--c-primary); height: 36px; }
+  .m-nav__menu li + li.is-group { margin-top: 0; }
+
+  /* Прогресс создания задания над навигацией */
+  .m-nav__progress {
+    position: relative; z-index: 1;
+    margin: 0 auto -38px; max-width: 342px; height: 91px; padding: 8px 8px 0;
+    background: var(--c-white); border-radius: 8px;
+    box-shadow: 0 0 10px rgba(82, 200, 101, 0.25);
+  }
+  .m-nav__progress-row { display: flex; justify-content: space-between; font-size: 16px; font-weight: 500; line-height: 15px; letter-spacing: -0.2px; color: var(--c-text); }
+  .m-nav__progress-bar { position: relative; margin-top: 8px; height: 11px; border-radius: 48px; background: rgba(82, 200, 101, 0.08); overflow: hidden; }
+  .m-nav__progress-bar span { position: absolute; inset: 0 auto 0 0; width: var(--progress, 0%); min-width: 19px; border-radius: 48px; background: var(--c-primary); }
+
+  /* ---- Футер ---- */
+  .m-footer {
+    margin: 0 16px; padding: 46px 0 100px;
+    border-top: 1px solid #d7d7d7; text-align: center; color: var(--c-text);
+  }
+  .m-footer__links { display: flex; justify-content: space-between; gap: 18px; padding-right: 12px; text-align: left; }
+  .m-footer__links a { width: 134px; font-size: 13.2px; font-weight: 500; line-height: 1; }
+  .m-footer__links a:first-child { width: 115px; }
+  .m-footer__company { margin: 40px auto 0; max-width: 343px; font-size: 12px; font-weight: 400; line-height: 19.5px; }
+  .m-footer__copy { margin-top: 32px; font-size: 12px; font-weight: 400; line-height: 1; }
+
+  /* ---- Общие мобильные элементы ---- */
+  .m-tabs { display: flex; gap: 8px; }
+  .m-tabs__tab {
+    flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center;
+    height: 40px; border: 1px solid var(--c-primary); border-radius: 8px;
+    font-size: 14px; font-weight: 500; color: var(--c-primary); background: var(--c-white);
+  }
+  .m-tabs__tab.is-active { background: var(--c-primary); color: var(--c-white); font-weight: 600; }
+  .m-section-title { font-size: 20px; font-weight: 600; line-height: 24px; color: var(--c-black); }
+}

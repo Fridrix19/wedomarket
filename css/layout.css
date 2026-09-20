@@ -1,0 +1,189 @@
+/* ==========================================================================
+   WeDo Market — каркас: контейнер, шапка, сайдбар, футер, сетка страницы
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.page { display: flex; flex-direction: column; min-height: 100vh; }
+.page__main { flex: 1 0 auto; padding: 80px 0 80px; }
+@media (min-width: 1200px) { .page__main { min-height: 1293px; } }
+.page__main--wizard { padding-top: 66px; }
+
+/* ---- Шапка ---- */
+.header {
+  position: relative;
+  z-index: 20;
+  height: var(--header-h);
+  background: var(--c-white);
+  box-shadow: var(--shadow-header);
+}
+.header__inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+.header__left { display: flex; align-items: center; gap: 56px; }
+.header__logo { display: flex; align-items: center; height: var(--header-h); width: 71px; }
+.header__logo img { width: 65px; height: auto; }
+.nav { display: flex; align-items: center; }
+.nav__link {
+  display: inline-flex; align-items: center; height: 40px; padding: 0 24px;
+  border-radius: var(--radius); font-size: 16px; font-weight: 600; color: var(--c-black);
+  transition: background-color .15s ease;
+}
+.nav__link:hover { background: var(--c-gray-bg); }
+.header__right { display: flex; align-items: center; gap: 28px; }
+.header__icons { display: flex; align-items: center; gap: 8px; }
+.icon-btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%; transition: background-color .15s ease;
+}
+.icon-btn:hover { background: var(--c-gray-bg); }
+.icon-btn img { width: 32px; height: 32px; }
+.icon-btn--bell img { width: 17px; height: 19px; }
+.sidebar__link .icon--nav-notification-settings { width: 18px; height: 17px; transform: scaleY(-1); }
+
+/* Пользователь + выпадающее меню */
+.user { position: relative; }
+.user__btn { display: inline-flex; align-items: center; gap: 2px; }
+.user__avatar { width: 40px; height: 40px; }
+.user__chevron { width: 16px; height: 16px; transition: transform .2s ease; }
+.user.is-open .user__chevron { transform: rotate(180deg); }
+.user__menu {
+  position: absolute; right: 0; top: calc(100% + 8px);
+  width: 197px; padding: 6px;
+  background: var(--c-white); border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  opacity: 0; visibility: hidden; transform: translateY(-4px);
+  transition: opacity .15s ease, transform .15s ease, visibility .15s;
+}
+.user.is-open .user__menu { opacity: 1; visibility: visible; transform: none; }
+.user__menu a {
+  display: block; height: 39px; line-height: 39px; padding: 0 12px;
+  border-radius: 6px; font-size: 15px; font-weight: 500; color: var(--c-text);
+}
+.user__menu a:hover { background: var(--c-gray-bg); }
+
+/* ---- Хлебные крошки и заголовок страницы ---- */
+.breadcrumbs { display: flex; align-items: center; gap: 8px; height: 49px; font-size: 16px; font-weight: 500; line-height: 27.2px; }
+.breadcrumbs a { color: var(--c-text); }
+.breadcrumbs a:hover { color: var(--c-primary); }
+.breadcrumbs span { color: var(--c-muted-5); }
+.page-title { margin: 41px 0 72px; font-size: 48px; font-weight: 500; color: var(--c-black); line-height: 1; }
+
+/* ---- Сетка: сайдбар + контент ---- */
+.layout { display: flex; align-items: flex-start; gap: 32px; }
+.layout--dashboard { gap: 15px; }
+.layout__content { flex: 1 1 auto; min-width: 0; }
+
+/* ---- Сайдбар ---- */
+.sidebar {
+  flex: 0 0 var(--sidebar-w);
+  width: var(--sidebar-w);
+  display: flex; flex-direction: column;
+  min-height: 526px;
+  padding: 16px 8px;
+  background: var(--c-primary);
+  border-radius: var(--radius);
+  color: var(--c-white);
+}
+.sidebar--wizard { min-height: 474px; padding: 13px 8px; }
+.sidebar__group { display: flex; flex-direction: column; gap: 7px; }
+.sidebar__group--bottom { margin-top: auto; gap: 2px; }
+.sidebar--wizard .sidebar__group { gap: 4px; }
+.sidebar--wizard .sidebar__group--bottom { padding-top: 45px; }
+.sidebar__item { display: flex; flex-direction: column; }
+.sidebar__link {
+  display: flex; align-items: center; gap: 8px;
+  min-height: 40px; padding: 6px 16px;
+  border-radius: var(--radius);
+  font-size: 16px; font-weight: 600; line-height: 1; color: var(--c-white);
+  transition: background-color .15s ease, color .15s ease;
+}
+.sidebar__link:hover { background: rgba(255, 255, 255, 0.14); }
+.sidebar__link .icon { width: 16px; height: 16px; }
+.sidebar__link--two-lines { line-height: 16px; padding-top: 4px; padding-bottom: 4px; }
+.sidebar__item.is-active > .sidebar__link { background: var(--c-white); color: var(--c-text); }
+.sidebar__item.is-active > .sidebar__link:hover { background: var(--c-white); }
+
+/* Аккордеон "Задания" */
+.sidebar__toggle { width: 100%; justify-content: space-between; text-align: left; }
+.sidebar__toggle-left { display: flex; align-items: center; gap: 8px; }
+.sidebar__toggle .icon--chevron { transition: transform .2s ease; }
+.sidebar__item.is-open > .sidebar__toggle { background: var(--c-white); color: var(--c-text); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.sidebar__item.is-open > .sidebar__toggle .icon--chevron { transform: rotate(180deg); }
+.sidebar__sub {
+  display: none;
+  flex-direction: column; gap: 2px;
+  padding: 2px 0 4px;
+  background: var(--c-white);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+.sidebar__item.is-open > .sidebar__sub { display: flex; }
+.sidebar__sub a {
+  display: flex; align-items: center; height: 40px; padding: 10px 16px;
+  font-size: 16px; font-weight: 500; color: var(--c-text-4);
+  transition: color .15s ease;
+}
+.sidebar__sub a:hover, .sidebar__sub a.is-active { color: var(--c-primary); }
+
+/* ---- Карточки ---- */
+.card { background: var(--c-white); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.card--lg { box-shadow: var(--shadow-card-lg); }
+.card--yellow { box-shadow: var(--shadow-card-yellow); }
+
+/* ---- Футер ---- */
+.footer { flex-shrink: 0; padding: 32px 0 32px; background: var(--c-white); }
+.footer__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; }
+.footer__cols { display: flex; align-items: flex-start; gap: 84px; }
+.footer__col { display: flex; flex-direction: column; gap: 16px; font-size: 16px; font-weight: 500; }
+.footer__col a { color: var(--c-text); }
+.footer__col a:hover { color: var(--c-primary); }
+.footer__col--docs { width: 163px; }
+.footer__col--docs a { color: var(--c-text-2); }
+.footer__col--social { gap: 8px; }
+.social-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  width: 200px; height: 40px; padding: 0 8px;
+  border-radius: var(--radius); font-size: 16px; font-weight: 500;
+  transition: filter .15s ease;
+}
+.social-btn:hover { filter: brightness(0.96); }
+.social-btn--telegram { background: var(--c-telegram-bg); color: var(--c-telegram); }
+.social-btn--telegram img { width: 18px; height: 18px; }
+.social-btn--viber { background: var(--c-viber-bg); color: var(--c-viber); justify-content: center; padding: 0 24px; }
+.social-btn--viber img { width: 18px; height: 32px; }
+.footer__company { display: flex; align-items: flex-start; gap: 24px; }
+.footer__company-logo { width: 88px; height: 100px; object-fit: contain; }
+.footer__company-text { width: 312px; font-size: 16px; font-weight: 400; line-height: 1.3; color: var(--c-text); }
+.footer__payments { display: flex; align-items: center; justify-content: center; gap: 78px; margin-top: 56px; }
+.footer__payments img { height: auto; }
+.footer__copy { margin-top: 16px; text-align: center; font-size: 16px; font-weight: 500; color: var(--c-text-2); }
+
+/* ---- Адаптив (базовый; мобильные экраны верстаются отдельно по макету) ---- */
+@media (max-width: 1399px) {
+  .footer__cols { gap: 48px; }
+}
+@media (max-width: 1199px) {
+  .header__left { gap: 24px; }
+  .nav__link { padding: 0 14px; }
+  .footer__top { flex-direction: column; }
+  .footer__payments { gap: 40px; flex-wrap: wrap; }
+}
+@media (max-width: 991px) {
+  .page__main { padding: 40px 0; }
+  .page-title { margin: 24px 0 40px; font-size: 36px; }
+  .layout, .layout--dashboard { flex-direction: column; gap: 24px; }
+  .sidebar, .sidebar--wizard { width: 100%; flex-basis: auto; min-height: 0; }
+  .sidebar__group--bottom { margin-top: 24px; }
+  .sidebar--wizard .sidebar__group--bottom { padding-top: 0; }
+  .nav { display: none; }
+}
+@media (max-width: 575px) {
+  :root { --gutter: 16px; }
+  .header__right { gap: 16px; }
+  .footer__cols { flex-direction: column; gap: 24px; }
+  .footer__company { flex-direction: column; }
+  .footer__company-text { width: auto; }
+}

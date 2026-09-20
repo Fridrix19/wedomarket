@@ -1,0 +1,361 @@
+/* ==========================================================================
+   WeDo Market — раздел «Задания» и «Дашборд»: мобильная версия (≤767px)
+   Figma: дашборд 48:3362; мастер 48:785, 64:359, 64:543, 64:917, 144:1063, 64:1039, 64:1243, 64:1653;
+   панель «Совет ИИ» 151:1918 / 151:2068 / 151:2428 / 151:2543; списки 64:1883, 64:2376, 64:2195; редактирование 48:1022.
+   Десктопная вёрстка (≥768px) этим файлом не меняется — все правки внутри @media (max-width: 767px),
+   кроме иконок-масок и базовых стилей НОВЫХ страниц списка заданий (my-tasks*.html).
+   ========================================================================== */
+
+/* ---- Исправление общего каркаса: .m-only-flex не скрывался на десктопе (в mobile.css скрыт только .m-only).
+   Из-за этого мобильная шапка из common.py и m-only-flex блоки показывались на ≥768px. Правило стоит перенести в mobile.css. ---- */
+.m-only-flex { display: none !important; }
+@media (max-width: 767px) { .m-only-flex { display: flex !important; } }
+
+/* ---- Иконки секции (маски) ---- */
+.icon--task-plane { --icon: url("../assets/icons/task-plane.svg"); }
+.icon--task-close { --icon: url("../assets/icons/task-close.svg"); }
+
+/* ==========================================================================
+   Новые страницы: список заданий (my-tasks.html, my-tasks-done.html) — базовые стили карточки,
+   на десктопе контент центрирован в колонке ~600px рядом с сайдбаром.
+   ========================================================================== */
+.tasks-list { max-width: 600px; }
+.tasks-list__title { margin-bottom: 24px; }
+.tasks-list__count { font-size: 16px; font-weight: 400; line-height: 27.2px; color: var(--c-text); }
+.tcard-list { display: flex; flex-direction: column; gap: 32px; margin-top: 12px; }
+.tcard__box {
+  padding: 16px; border-radius: 8px; background: var(--c-white);
+  box-shadow: 0 0 14.6px rgba(82, 200, 101, 0.35);
+}
+.tcard__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.tcard__title { font-size: 20px; font-weight: 600; line-height: 1.1; color: var(--c-text); }
+.tcard__price {
+  display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto;
+  padding: 8px; border-radius: 6px; background: var(--c-yellow);
+  font-size: 16px; font-weight: 700; line-height: 18px; color: var(--c-white); white-space: nowrap;
+}
+.tcard__desc { margin-top: 16px; font-size: 12px; font-weight: 400; line-height: 1.1; color: var(--c-black); }
+.tcard__map { height: 150px; margin-top: 24px; border-radius: 8px; overflow: hidden; }
+.tcard__map img { width: 100%; height: 100%; object-fit: cover; }
+.tcard__details { display: none; }
+.tcard.is-open .tcard__details { display: block; }
+.tcard.is-open .tcard__desc, .tcard.is-open .tcard__price--head { display: none; }
+.tcard.is-open .tcard__map { margin-top: 16px; }
+.tcard__props {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 16px; row-gap: 24px; align-items: center;
+  margin: 24px 0 0;
+}
+.tcard__props dt { font-size: 16px; font-weight: 600; line-height: 1.1; color: var(--c-black); }
+.tcard__props dd { margin: 0; text-align: right; font-size: 16px; font-weight: 300; line-height: 1.1; color: var(--c-black); }
+.tcard__status {
+  margin-top: 24px; padding: 8px; border-radius: 6px; text-align: center;
+  font-size: 16px; font-weight: 600; line-height: 18px; color: var(--c-white);
+}
+.tcard__status--done { background: #ffa589; }
+.tcard__status--wait { background: var(--c-yellow); }
+.tcard__btns { display: flex; gap: 8px; margin-top: 16px; }
+.tcard__btn { flex: 1 1 0; height: 48px; padding: 0; border-radius: 8px; font-size: 16px; font-weight: 500; }
+.tcard__btn--outline { background: var(--c-white); border: 0.5px solid var(--c-primary); color: var(--c-primary); font-weight: 300; }
+.tcard__btn--outline:hover { background: rgba(82, 200, 101, 0.08); }
+.tcard__btn--full { flex-basis: 100%; }
+
+/* ==========================================================================
+   Мобильная версия
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* ---- Общий каркас раздела ---- */
+  .sidebar { display: none !important; }
+  .layout, .layout--dashboard { display: block; }
+  .layout__content { width: 100%; }
+  .breadcrumbs, .page-title { display: none; }
+
+  /* Вкладки «Создать / Мои / Готовые» (48px, рамка 0.5px, Light 16) */
+  .tasks-tabs { gap: 8px; }
+  .tasks-tabs .m-tabs__tab {
+    height: 48px; border-width: 0.5px; border-radius: 8px;
+    font-size: 16px; font-weight: 300; line-height: 26.4px;
+  }
+  .tasks-tabs .m-tabs__tab.is-active { font-weight: 600; }
+
+  /* Звёздочки обязательных полей в макете отсутствуют */
+  .task-form__req { display: none; }
+
+  /* Поля с текстовым счётчиком (0/800) */
+  .field--count { position: relative; }
+  .field__count {
+    position: absolute; right: 16px; bottom: 16px;
+    font-size: 15px; font-weight: 400; line-height: normal; color: var(--c-muted-2); pointer-events: none;
+  }
+  .textarea { min-height: 128px; height: 128px; padding: 16px; }
+
+  /* Способ оплаты (шаг 6 / форма) */
+  .payment { gap: 24px; }
+  .payment__title { font-size: 20px; font-weight: 600; line-height: 24px; }
+  .payment__option { gap: 8px; }
+  .payment__option .radio-desc { max-width: none; font-size: 14px; line-height: 1.1; color: var(--c-muted-7); }
+  .payment__option:has(.radio--disabled) { opacity: 0.5; }
+  .payment__option .radio--disabled .radio__label { color: var(--c-text-3); }
+  .payment__option .radio--disabled .radio__box { background: var(--c-white); border-color: var(--c-border-3); }
+
+  /* ======================================================================
+     Дашборд (48:3362) — переупорядочивание блоков через order
+     ====================================================================== */
+  .dashboard { display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
+  .dashboard__main, .dashboard__aside, .dashboard__aside-group { display: contents; }
+  .dashboard__m-title { line-height: 24px; }
+  .dashboard__m-title--finance { order: 1; }
+  .stat--balance { order: 2; }
+  .dashboard__m-btns { order: 3; }
+  .dashboard__m-title--tasks { order: 4; margin-top: 16px; }
+  .stat--done { order: 5; }
+  .stat--created { order: 6; }
+  .dashboard__create { order: 7; }
+  .chart-block { order: 8; margin-top: 16px; gap: 16px; }
+  .recent { order: 9; }
+
+  .stat { min-height: 0; padding: 16px; gap: 16px; }
+  .stat--wide { gap: 24px; }
+  .stat__value { line-height: 38px; }
+  .stat__label { line-height: 19px; }
+  .dashboard__m-btns { gap: 8px; }
+  .dashboard__m-btn { flex: 1 1 0; height: 48px; padding: 0; border-radius: 8px; font-size: 16px; font-weight: 600; line-height: 26.4px; }
+  .dashboard__m-btn--outline { background: var(--c-white); border: 0.5px solid var(--c-primary); color: var(--c-primary); font-weight: 300; }
+  .dashboard__m-btn--outline:hover { background: rgba(82, 200, 101, 0.08); }
+  .dashboard__create { height: 48px; border-radius: 8px; line-height: 26.4px; }
+  .chart-block .h2 { font-size: 20px; font-weight: 600; line-height: 24px; }
+  .chart { aspect-ratio: 683 / 278; }
+  .recent { padding: 0; border-radius: 0; box-shadow: none; }
+  .recent__title { display: none; }
+  .recent__list { gap: 24px; margin-bottom: 16px; }
+  .recent__row { min-height: 27px; }
+  .recent .btn { height: 48px; border-radius: 8px; line-height: 26.4px; }
+
+  /* ======================================================================
+     Мастер создания задания (шаги 1–7)
+     ====================================================================== */
+  .wiz-m__title {
+    margin: 24px 0 0; font-size: 20px; font-weight: 600; line-height: 26px; letter-spacing: -0.2px; color: var(--c-text);
+  }
+  .page__main--wizard .wizard-card { margin-top: 14px; padding: 0; border-radius: 0; box-shadow: none; }
+  .wizard__body { gap: 24px; }
+
+  /* Кнопки «Назад» / «Далее» + «Сохранить как черновик» */
+  .wiz-m__footer { margin-top: 32px; }
+  .wiz-m__btns { display: flex; gap: 8px; }
+  .wiz-m__btns .btn { flex: 1 1 0; height: 48px; padding: 0; border-radius: 8px; font-size: 15px; line-height: 25.5px; }
+  .wiz-m__back {
+    background: var(--c-white); border: 0.5px solid var(--c-primary); color: var(--c-primary); font-weight: 300;
+    box-shadow: 0 2px 8px rgba(82, 200, 101, 0.35);
+  }
+  .wiz-m__back:hover { background: rgba(82, 200, 101, 0.08); }
+  .wiz-m__next { font-weight: 500; box-shadow: var(--shadow-btn); }
+  .wiz-m__draft {
+    display: block; margin-top: 12px; text-align: center;
+    font-size: 16px; font-weight: 300; line-height: 22.44px; color: #bababa; text-decoration: underline;
+  }
+  .wiz-m__draft:hover { color: var(--c-muted-2); }
+
+  /* Шаг 1 (48:785) */
+  .step1-m .field { gap: 1px; }
+  .step1-m__label { font-weight: 400; line-height: 27.2px; color: var(--c-text); }
+  .step1-m .step1__input { padding: 12px 16px; }
+  .step1-m .wiz-m__footer { margin-top: 16px; }
+  .step1-m__subtitle { margin-top: 16px; font-size: 16px; font-weight: 600; line-height: 27.2px; color: var(--c-text); }
+  .step1-m__dropzone { min-height: 176px; margin-top: 20px; padding: 16px; gap: 8px; border-width: 1px; }
+  .step1-m__dropzone .dropzone__icon { width: 36px; height: 24px; object-fit: contain; }
+  .step1-m__dropzone .dropzone__text { font-size: 16px; line-height: 15px; }
+  .step1-m__dropzone .dropzone__sub { margin-top: 0; font-size: 12px; line-height: 13px; }
+  .step1-m__or { margin-top: 8px; text-align: center; font-size: 12px; font-weight: 400; line-height: 13px; color: var(--c-muted-6); }
+  .step1-m__record { width: 100%; height: 48px; margin-top: 8px; border-radius: 8px; }
+  .step1-m__hint { margin-top: 24px; }
+  .step1-m .captcha-label { margin-top: 40px; }
+  .step1-m .captcha { margin-top: 8px; }
+
+  /* Шаг 2 (64:359) */
+  .step2__options { gap: 16px; max-width: none; }
+
+  /* Шаг 3 (64:543) */
+  .step3__row { gap: 24px; }
+  .step3__row .date-field { width: 100%; }
+
+  /* Шаг 4 (64:917 / 144:1063) */
+  .step4__result { padding: 30px 0 0; gap: 16px; }
+  .step4__text { max-width: 324px; }
+  .step4__sad {
+    position: relative; width: 80px; height: 80px; border-radius: 50%; background: #cd5c5c;
+  }
+  .step4__eye { position: absolute; top: 30px; width: 19px; height: 19px; border-radius: 50%; background: var(--c-white); }
+  .step4__eye:first-child { left: 13px; }
+  .step4__eye:nth-child(2) { left: 48px; }
+  .step4__mouth {
+    position: absolute; left: 31px; top: 49px; width: 19px; height: 10px;
+    border: 3px solid var(--c-white); border-color: var(--c-white) transparent transparent; border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .step4__sub { margin-top: 2px; max-width: 324px; font-size: 16px; font-weight: 300; line-height: 1.1; color: var(--c-text); }
+
+  /* Шаг 5 (64:1039) */
+  .file-pick--step5 .btn--pill, .file-pick--step5 .file-pick__hint { display: none; }
+  .file-pick__m-link {
+    display: inline-flex !important; align-items: center; gap: 4px;
+    font-size: 15px; font-weight: 300; line-height: 1.1; color: var(--c-muted-7);
+  }
+  .file-pick__info {
+    display: inline-flex; align-items: center; justify-content: center; width: 12px; height: 12px;
+    border: 1px solid currentColor; border-radius: 50%; font-size: 9px; line-height: 1; font-style: normal;
+  }
+
+  /* Шаг 6 (64:1243) */
+  .budget__row { gap: 8px; }
+  .budget__row .input { width: 0; flex: 1 1 0; min-width: 0; }
+  .budget__row .input.budget__cur { flex: 0 0 71px; width: 71px; padding-left: 0; padding-right: 0; text-align: center; }
+  .budget__hint { margin-top: 8px; }
+  .step6__payment { margin-top: 8px; }
+
+  /* Шаг 7 (64:1653): карточка «Совет ИИ» */
+  .ai-card {
+    position: relative; min-height: 158px; margin-bottom: -8px; padding: 16px; border-radius: 10px; color: var(--c-white);
+    background: linear-gradient(136.35deg, #52c865 8.49%, #b7e3be 87.91%);
+  }
+  .ai-card__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .ai-card__title { font-size: 20px; font-weight: 600; line-height: 20px; letter-spacing: -0.2px; color: var(--c-white); }
+  .ai-card__plane { width: 33px; height: 18px; color: var(--c-white); }
+  .ai-card__text { min-height: 50px; margin-top: 12px; font-size: 16px; font-weight: 400; line-height: 1.1; color: var(--c-white); }
+  .ai-card__btn { width: 100%; height: 48px; border-radius: 8px; font-size: 16px; font-weight: 500; line-height: 26.4px; }
+
+  /* Плашка «Оценка: Плохо» */
+  .ai-score { position: relative; height: 30px; margin-top: 16px; border-radius: 8px; background: #f2f2f2; overflow: hidden; }
+  .ai-score--card { background: var(--c-white); }
+  .ai-score::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 53px; background: #ffd9d9; }
+  .ai-score span {
+    position: relative; display: block; padding-left: 8px;
+    font-size: 16px; font-weight: 600; line-height: 30px; letter-spacing: -0.2px; color: #ff5c5c;
+  }
+
+  /* Панель «Совет ИИ» (151:1918 / 151:2068) — оверлей поверх страницы */
+  .ai-overlay {
+    position: fixed; inset: 0; z-index: 60; overflow-y: auto; -webkit-overflow-scrolling: touch;
+    padding: 110px 16px 40px; background: rgba(255, 255, 255, 0.92);
+  }
+  .ai-overlay[hidden] { display: none !important; }
+  body.ai-open { overflow: hidden; }
+  .ai-panel { padding: 16px; border: 0.5px solid var(--c-primary); border-radius: 8px; background: var(--c-white); }
+  .ai-panel__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .ai-panel__title {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 20px; font-weight: 600; line-height: 26px; letter-spacing: -0.2px; color: var(--c-black);
+  }
+  .ai-panel__plane { width: 27px; height: 14px; color: var(--c-black); }
+  .ai-panel__close { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; color: var(--c-black); }
+  .ai-panel__close .icon { width: 15px; height: 16px; }
+  .ai-panel__text { margin-top: 8px; font-size: 16px; font-weight: 400; line-height: 1.1; color: var(--c-black); }
+  .ai-section { margin-top: 28px; }
+  .ai-section__title { font-size: 16px; font-weight: 600; line-height: 26px; letter-spacing: -0.2px; color: var(--c-black); }
+  .ai-section__text { margin-top: 4px; font-size: 16px; font-weight: 400; line-height: 1.1; color: var(--c-black); }
+  .ai-field {
+    position: relative; margin-top: 16px; padding: 16px; border: 1px solid var(--c-border); border-radius: 8px; background: var(--c-white);
+    font-size: 16px; font-weight: 400; line-height: 1.1; color: var(--c-black);
+  }
+  .ai-field--area { min-height: 151px; padding-bottom: 40px; }
+  .ai-field--input {
+    min-height: 48px; padding: 14px 16px; border-color: var(--c-border-2); border-radius: 10px;
+    font-size: 15px; line-height: normal; color: var(--c-muted-2);
+  }
+  .ai-field__ghost { color: var(--c-border-2); }
+  .ai-field__count { position: absolute; right: 16px; bottom: 16px; font-size: 15px; color: var(--c-muted-2); }
+  .ai-switch { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; cursor: pointer; }
+  .ai-switch__label { font-size: 16px; font-weight: 600; line-height: 15px; color: var(--c-black); }
+  .ai-switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .ai-switch__track {
+    position: relative; flex: 0 0 auto; width: 64px; height: 26px; border-radius: 45px; background: #c2c2c2;
+    transition: background-color .15s ease;
+  }
+  .ai-switch__knob {
+    position: absolute; left: 4px; top: 4px; display: flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border-radius: 50%; background: var(--c-white); transition: transform .15s ease;
+  }
+  .ai-switch__knob .icon { width: 12px; height: 7px; color: #3d3d3d; }
+  .ai-switch input:checked + .ai-switch__track { background: var(--c-primary); }
+  .ai-switch input:checked + .ai-switch__track .ai-switch__knob { transform: translateX(38px); }
+  .ai-switch input:focus-visible + .ai-switch__track { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+  .ai-section__save {
+    width: 100%; height: 48px; margin-top: 16px; border-radius: 8px;
+    font-size: 15px; font-weight: 500; line-height: 25.5px; box-shadow: var(--shadow-btn);
+  }
+  .ai-section__row { display: flex; gap: 8px; margin-top: 16px; }
+  .ai-section__attach {
+    flex: 1 1 0; height: 48px; padding: 0; border: 1px solid var(--c-primary); border-radius: 8px; background: var(--c-white);
+    color: var(--c-primary); font-size: 15px; font-weight: 500; line-height: 1.1;
+    box-shadow: 0 2px 8px rgba(82, 200, 101, 0.35);
+  }
+  .ai-section__attach:hover { background: rgba(82, 200, 101, 0.08); }
+
+  /* ======================================================================
+     Форма задания (редактирование 48:1022 / шаг 7 64:1653) — одна колонка
+     ====================================================================== */
+  .form-card { padding: 0; border-radius: 0; box-shadow: none; }
+  .task-form { gap: 12px; max-width: none; }
+  .task-form__m-subtitle {
+    margin: 10px 0 0; font-size: 20px; font-weight: 600; line-height: 26px; letter-spacing: -0.2px; color: var(--c-text);
+  }
+  .task-form > .field { gap: 4px; }
+  .task-form > .field--count { gap: 8px; margin-top: 12px; }
+  .task-form > .field > .field__label,
+  .task-form__row .field > .field__label { font-weight: 400; line-height: 27.2px; color: var(--c-text); }
+  .task-form > .field--count > .field__label { font-weight: 500; line-height: normal; color: var(--c-text-3); }
+  .task-form > .field > .input,
+  .task-form__row .field > .input,
+  .m-budget .input {
+    padding: 12px 16px; border-color: var(--c-border-2); border-radius: 10px; font-size: 15px; font-weight: 400;
+  }
+  .task-form > .field > .input::placeholder,
+  .task-form__row .field > .input::placeholder,
+  .m-budget .input::placeholder { font-size: 15px; font-weight: 400; color: var(--c-muted-2); }
+  .task-form__row { flex-direction: column; gap: 16px; }
+  .task-form__row + .task-form__row { margin-top: 4px; }
+  .task-form__row .field { gap: 4px; }
+  .task-form__group { gap: 12px; }
+  .task-form__group-title { font-weight: 400; line-height: 27.2px; color: var(--c-text); }
+  .task-form__section { max-width: none; gap: 12px; margin-top: 20px; }
+  .task-form__section .h2 { font-size: 20px; font-weight: 600; line-height: 26px; letter-spacing: -0.2px; color: var(--c-text); }
+  .task-form__section-desc { line-height: 1.1; }
+  .date-fields { gap: 24px; margin-top: 20px; }
+  .date-field { width: 100%; }
+  .task-form .file-pick { align-items: stretch; gap: 8px; margin-top: 4px; }
+  .task-form .file-pick .btn--pill {
+    height: 48px; padding: 0; justify-content: center; border: 1px solid var(--c-primary); border-radius: 8px;
+    color: var(--c-primary); font-size: 15px; font-weight: 500; line-height: 25.5px;
+    box-shadow: 0 2px 8px rgba(82, 200, 101, 0.35);
+  }
+  .task-form .file-pick .btn--pill:hover { background: rgba(82, 200, 101, 0.08); }
+  .task-form .file-pick .btn--pill .icon { display: none; }
+  .task-form .file-pick__hint { font-size: 15px; font-weight: 400; line-height: 1.1; color: var(--c-muted-7); }
+  .task-form .payment { margin-top: 20px; }
+  .task-form__submit { width: 100%; height: 48px; margin-top: 12px; border-radius: 8px; font-size: 16px; font-weight: 600; line-height: 26.4px; }
+
+  /* Бюджет: слайдер + поля */
+  .m-budget { order: -1; }
+  .m-budget__label { font-size: 16px; font-weight: 400; line-height: 27.2px; color: var(--c-text); }
+  .m-budget__slider { position: relative; height: 16px; margin-top: 4px; cursor: pointer; touch-action: none; }
+  .m-budget__slider::before, .m-budget__slider::after {
+    content: ""; position: absolute; left: 0; top: 4px; height: 8px; border-radius: 20px;
+  }
+  .m-budget__slider::before { right: 0; background: var(--c-gray); }
+  .m-budget__slider::after { width: var(--fill, 50%); background: var(--c-primary); }
+  .m-budget__knob {
+    position: absolute; z-index: 1; top: 0; left: calc(var(--fill, 50%) - 8px); width: 16px; height: 16px;
+    border-radius: 50%; background: var(--c-primary);
+  }
+  .m-budget__inputs { display: flex; justify-content: space-between; margin-top: 8px; }
+  .m-budget__input { width: 51px; padding: 12px 6px !important; text-align: center; }
+  .m-budget__single { margin-top: 8px; }
+
+  /* ======================================================================
+     Списки заданий (64:1883 / 64:2376 / 64:2195) и просмотр задания
+     ====================================================================== */
+  .tasks-list { max-width: none; }
+  .tasks-list__count { margin-top: 20px; }
+  .tcard-list { margin-top: 24px; }
+  .tasks-list__count + .tcard-list { margin-top: 12px; }
+  .task-view { gap: 0; }
+  .task-view .tcard-list { margin-top: 24px; }
+}

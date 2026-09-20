@@ -1,0 +1,180 @@
+/* ==========================================================================
+   WeDo Market — стили страниц: дашборд, задание, мастер создания задания
+   ========================================================================== */
+
+/* ---- Дашборд ---- */
+.dashboard { display: flex; align-items: flex-start; gap: 14px; }
+.dashboard__main { flex: 1 1 683px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.dashboard__aside { flex: 0 0 364px; width: 364px; display: flex; flex-direction: column; gap: 24px; }
+.dashboard__aside-group { display: flex; flex-direction: column; gap: 16px; }
+
+.chart-block { display: flex; flex-direction: column; gap: 40px; }
+.chart {
+  position: relative; width: 100%; aspect-ratio: 1079 / 440;
+  border-radius: var(--radius);
+}
+.chart svg { width: 100%; height: 100%; }
+.chart .chart__grid { stroke: #e3e3e3; stroke-dasharray: 4 4; stroke-width: 1; }
+.chart .chart__line { fill: none; stroke: var(--c-primary); stroke-width: 2; }
+.chart .chart__dot { fill: var(--c-primary); }
+.chart .chart__label { font-size: 11px; font-weight: 500; fill: #8a8a8a; font-family: var(--font-main); }
+
+.recent { padding: 21px 27px; }
+.recent__title { font-size: 24px; font-weight: 500; color: var(--c-black); margin-bottom: 38px; }
+.recent__list { display: flex; flex-direction: column; gap: 24px; margin-bottom: 39px; }
+.recent__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.recent__name { font-size: 16px; font-weight: 500; color: var(--c-text); }
+
+.stat { display: flex; align-items: center; gap: 16px; min-height: 112px; padding: 24px 16px; }
+.stat--wide { gap: 24px; }
+.stat__icon { width: 64px; height: 64px; flex: 0 0 auto; }
+.stat__label { font-size: 16px; font-weight: 500; color: var(--c-muted); }
+.stat__value { font-size: 32px; font-weight: 600; color: var(--c-text); }
+
+.balance { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 244px; padding: 18px 27px; }
+.balance__inner { display: flex; flex-direction: column; gap: 24px; width: 257px; max-width: 100%; }
+.balance__title { font-size: 24px; font-weight: 500; color: var(--c-text); }
+.balance__btns { display: flex; flex-direction: column; gap: 10px; }
+
+/* ---- Просмотр задания ---- */
+.task-view { display: flex; flex-direction: column; gap: 24px; }
+.back-link { display: inline-flex; align-items: center; gap: 15px; font-size: 16px; font-weight: 500; color: var(--c-text-6); }
+.back-link img { width: 24px; height: 24px; }
+.back-link:hover { color: var(--c-primary); }
+.task-card { position: relative; padding: 32px; border-radius: var(--radius-xl); }
+.task-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 42px; }
+.task-card__title { max-width: 527px; font-size: 40px; font-weight: 600; color: var(--c-text); }
+.task-card__title sup { font-size: 0.65em; line-height: 0; }
+.edit-btn { flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; }
+.edit-btn img { width: 32px; height: 32px; }
+.task-props { display: grid; grid-template-columns: 280px 1fr; column-gap: 230px; row-gap: 32px; margin-bottom: 63px; max-width: 980px; }
+.task-props dt { font-size: 24px; font-weight: 600; color: var(--c-black); }
+.task-props dd { margin: 0; font-size: 24px; font-weight: 500; color: var(--c-text-5); }
+.task-map { width: 100%; height: 252px; border-radius: var(--radius-xl); overflow: hidden; }
+.task-map img { width: 100%; height: 100%; object-fit: cover; }
+.task-status {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 82px; padding: 10px;
+  font-size: 24px; font-weight: 500; color: var(--c-black);
+}
+
+/* ---- Форма задания (редактирование / просмотр на шаге 7) ---- */
+.form-card { padding: 32px; }
+.task-form { display: flex; flex-direction: column; gap: 32px; max-width: 980px; }
+.task-form__title { margin-bottom: -8px; }
+.task-form__row { display: flex; gap: 32px; }
+.task-form__row > .field { flex: 1 1 0; }
+.task-form__row > .field--md { flex: 0 0 452px; }
+.task-form__row > .field--lg { flex: 0 0 496px; }
+.task-form__group { display: flex; flex-direction: column; gap: 16px; }
+.task-form__group-title { font-size: 16px; font-weight: 500; line-height: 24px; color: var(--c-black); }
+.task-form__section { display: flex; flex-direction: column; gap: 16px; max-width: 617px; }
+.task-form__section .h2 { font-size: 32px; }
+.task-form__section-desc { font-size: 16px; font-weight: 400; color: var(--c-black); }
+.date-fields { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.date-field { display: flex; flex-direction: column; gap: 8px; width: 570px; max-width: 100%; }
+.date-field .input-row > .field { flex: 0 0 369px; max-width: 100%; }
+.payment { display: flex; flex-direction: column; gap: 24px; }
+.payment__title { font-size: 24px; font-weight: 500; line-height: 24px; color: var(--c-black); }
+.payment__option { display: flex; flex-direction: column; gap: 8px; }
+.task-form__submit { width: 241px; }
+
+/* ---- Мастер создания задания ---- */
+.wizard-card { padding: 32px; }
+.wizard__head { display: flex; align-items: center; gap: 10px; }
+.wizard__num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--c-primary); color: var(--c-white);
+  font-size: 14px; font-weight: 500; line-height: 1;
+}
+.wizard__title { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; line-height: 30px; color: var(--c-text); }
+.wizard__progress { position: relative; height: 6px; margin: 16px 0 22px; border-radius: 999px; background: var(--c-gray); overflow: hidden; }
+.wizard__progress-bar { position: absolute; inset: 0 auto 0 0; width: var(--progress, 0%); border-radius: 999px; background: var(--c-primary); transition: width .3s ease; }
+.wizard__body { display: flex; flex-direction: column; gap: 24px; }
+.wizard__footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 56px; }
+.wizard__footer .btn--back { width: 97px; padding: 0; opacity: .65; }
+.wizard__footer .btn--back:hover { opacity: 1; }
+.wizard__footer .btn--draft { width: 201px; padding: 0; }
+.wizard__footer .btn--next { width: 95px; padding: 0; font-size: 15px; }
+
+/* Шаг 1 */
+.step1__label { font-size: 16px; font-weight: 400; line-height: 27.2px; color: var(--c-text); margin-bottom: 4px; }
+.step1__input { border-color: var(--c-border-2); border-radius: var(--radius-md); font-size: 15px; font-weight: 400; }
+.step1__input::placeholder { font-size: 15px; }
+.step1__subtitle { margin-top: 12px; font-size: 24px; font-weight: 500; line-height: 30px; letter-spacing: -0.01em; color: var(--c-text); }
+.step1__hint { margin-top: 8px; font-size: 15px; font-weight: 400; line-height: 1.1; color: var(--c-muted-7); max-width: 990px; }
+.dropzone {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+  min-height: 197px; margin-top: 16px; padding: 24px;
+  background: var(--c-gray-bg); border: 2px dashed var(--c-border-dash); border-radius: var(--radius-lg);
+  text-align: center; cursor: pointer; transition: border-color .15s ease, background-color .15s ease;
+}
+.dropzone:hover, .dropzone.is-dragover { border-color: var(--c-primary); background: #f4fbf5; }
+.dropzone__icon { width: 40px; height: 40px; }
+.dropzone__text { font-size: 15px; font-weight: 500; color: var(--c-text-7); }
+.dropzone__sub { margin-top: -6px; font-size: 13px; font-weight: 400; color: var(--c-muted-6); }
+.dropzone__btn {
+  margin-top: 12px; width: 168px; height: 40px; padding: 0;
+  border-radius: var(--radius-md); box-shadow: var(--shadow-btn);
+  font-size: 15px; font-weight: 500;
+}
+.dropzone__btn img { width: 18px; height: 18px; }
+.captcha-label { margin-top: 26px; font-size: 16px; font-weight: 500; line-height: 27.2px; color: var(--c-text-7); }
+.captcha {
+  position: relative; display: flex; align-items: flex-start; gap: 16px;
+  min-height: 102px; margin-top: 6px; padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 11px; background: var(--c-white);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--c-black);
+}
+.captcha__box { flex: 0 0 auto; width: 28px; height: 28px; border: 2px solid #ccc; border-radius: 4px; background: var(--c-white); cursor: pointer; }
+.captcha__box.is-checked { border-color: var(--c-primary); background: var(--c-primary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center / 18px no-repeat; }
+.captcha__title { font-size: 17.3px; font-weight: 500; line-height: 24px; letter-spacing: 0.117px; }
+.captcha__text { margin-top: 4px; font-size: 15px; line-height: 20px; letter-spacing: 0.098px; opacity: .8; }
+.captcha__brand { margin-top: 12px; font-size: 13.9px; line-height: 16px; opacity: .5; }
+.captcha__help { position: absolute; right: 8px; bottom: 8px; width: 20px; height: 20px; }
+
+/* Шаг 2 */
+.step2__options { display: flex; flex-direction: column; gap: 16px; max-width: 342px; }
+.step2__option { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.step2__option .radio__label { font-weight: 400; color: var(--c-text); }
+.step2__option .radio { flex-direction: row-reverse; justify-content: space-between; width: 100%; }
+
+/* Шаг 3 */
+.step3__row { display: flex; gap: 40px; }
+.step3__row .date-field { width: 482px; }
+
+/* Шаг 4 */
+.step4__result { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 88px 0 60px; text-align: center; }
+.step4__check { position: relative; width: 80px; height: 80px; }
+.step4__check img { width: 80px; height: 80px; }
+.step4__check .step4__tick { position: absolute; left: 50%; top: 50%; width: 28px; height: 31px; transform: translate(-50%, -50%); }
+.step4__text { max-width: 310px; font-size: 16px; font-weight: 700; line-height: 1.1; color: var(--c-text); }
+
+/* Шаг 6 */
+.budget__row { display: flex; gap: 8px; }
+.budget__row .input { width: 264px; flex: 0 0 auto; }
+.budget__row .budget__cur { width: 71px; text-align: center; padding-left: 0; padding-right: 0; color: var(--c-muted-2); }
+.budget__hint { display: inline-block; margin-top: 16px; font-size: 16px; font-weight: 300; letter-spacing: -0.01em; color: var(--c-muted-3); text-decoration: underline dotted; text-underline-position: from-font; }
+.step6__payment { margin-top: 16px; }
+
+/* ---- Адаптив ---- */
+@media (max-width: 1199px) {
+  .task-props { column-gap: 60px; grid-template-columns: 220px 1fr; }
+  .task-form__row > .field--md, .task-form__row > .field--lg { flex: 1 1 0; }
+  .dashboard { flex-direction: column; gap: 24px; }
+  .dashboard__main { flex-basis: auto; width: 100%; }
+  .dashboard__aside { width: 100%; flex-basis: auto; }
+  .dashboard__aside-group { display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+}
+@media (max-width: 767px) {
+  .form-card, .wizard-card, .task-card { padding: 20px; }
+  .task-form__row, .step3__row { flex-direction: column; gap: 24px; }
+  .task-props { grid-template-columns: 1fr; row-gap: 8px; }
+  .task-props dt { margin-top: 16px; }
+  .task-props dt, .task-props dd, .task-card__title { font-size: 20px; }
+  .task-card__title { font-size: 28px; }
+  .wizard__footer { flex-wrap: wrap; }
+  .recent { padding: 16px; }
+  .date-field .input-row > .field { flex: 1 1 auto; }
+}
